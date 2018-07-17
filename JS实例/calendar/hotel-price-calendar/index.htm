@@ -1,0 +1,67 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="angtian">
+    <meta name="description" content="酒店价格日历组件Demo">
+    <meta name ="keywords" content="日历, 日历组件, 价格日历">
+    <title>酒店价格日历组件Demo</title>
+    <style>pre{color:green;padding:10px 15px;background:#f0f0f0;border:1px dotted #333;font:12px/1.5 Courier New;}</style>
+    <script src="kissy-min.js"></script>
+    <script>
+    (function(S, VER) {
+        S.config({
+            packages: {
+                'js': {
+                    path : VER,
+                    debug: !0
+                },
+                'css': {
+                    path : VER,
+                    debug: !0
+                }
+            }
+        });
+        
+        S.use('js/hotel-price-calendar', function(S, HotelPriceCalendar) {
+            var cal = new HotelPriceCalendar({
+                    checkInNode : '#J_CheckIn',
+                    checkOutNode: '#J_CheckOut'
+                });
+                
+            S.io.jsonp('http://www.fgm.cc/learn/calendar/hotel-price-calendar/getData.asp', function(data) {
+                cal.set('data', data)
+            });
+        });
+        
+    })(KISSY, 20121122);
+    </script>
+</head>
+<pre>
+/**
+ * @module hotel-price-calendar
+ * @description 
+ * 酒店价格日历具有以下特点：
+ * • 异步接收指定日期范围房态数据
+ * • 日历上直接显示价格，如果房间数小于3间，显示“紧”标识
+ * • 可设置日历显示范围（默认90天）
+ * • 可设置入住日期跟离店日间的最大间隔（默认28天）
+ * • 选择入住日期后，可根据参数设置（默认2天），自动计算离店日期，用户手动设置离店日期后，会自动记录日期间隔
+ * • 选择离店日期后，会自动将入住日期设为日历的最小日期，最大日期为最大间隔天数对应的日期
+ * • 鼠标移入日历，日期背景颜色会根据选择入住/离店来区分，入住颜色（#DFEEFF），离店颜色（#FFF3DC）
+ */    
+</pre>
+<body>
+    <center>
+        <input id="J_CheckIn" type="text" value="" autocomplete="off" />
+        -
+        <input id="J_CheckOut" type="text" value="" autocomplete="off" />
+        <br />
+        <br />
+        <select>
+            <option value="">检测IE6遮挡</option>
+            <option value="">检测IE6遮挡</option>
+        </select>
+    </center>
+</body>
+</html>

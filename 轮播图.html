@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #container{
+            height:400px;
+            width:600px;
+            margin:0 auto;
+            border:10px solid #5792DC;
+            border-radius: 10px;
+            position: relative;
+        }
+        .item{
+            display: none;
+        }
+        .item-show{
+            display: block;
+        }
+        .goback-btn-container{
+            position: absolute;
+            bottom:10px;
+            left:10px;
+        }
+        .goback-btn{
+            float: left;
+            border-radius: 100%;
+            width:30px;
+            height:30px;
+            background-color: rgba(12,103,171,.4);
+            text-align: center;
+            line-height:30px;
+            color:rgba(255,255,255,.4);
+            cursor:pointer;
+            display: none;
+            font-size:20px;
+            z-index: 2;
+            margin-right: 5px;
+        }
+        .container:hover .goback-btn{
+            display: block;
+        }
+
+        .item-btn-container{
+            position: absolute;
+            bottom:10px;
+            right:10px;
+
+        }
+        .item-btn-container span{
+            float: left;
+            border-radius: 50%;
+            width:30px;
+            height:30px;
+            background-color: rgba(12,103,171,.4);
+            text-align: center;
+            line-height:30px;
+            color:rgba(255,255,255,.4);
+            margin-right:3px;
+            cursor:pointer;
+        }
+
+
+        .item-btn-container .on, .item-btn-container span:hover, .goback-btn-container .on, .goback-btn:hover{
+            background-color: rgba(12,103,171,.7);
+            color:rgba(255,255,255,.9);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="item item-show">
+            <img src="./焦点轮播图：Airplane/img/a.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="./焦点轮播图：Airplane/img/b.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="./焦点轮播图：Airplane/img/c.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="./焦点轮播图：Airplane/img/d.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="./焦点轮播图：Airplane/img/e.jpg" alt="">
+        </div>
+
+        <div class="goback-btn-container">
+            <div class="goback-btn" id="back">&lt;</div>
+            <div class="goback-btn" id="go">&gt;</div>
+        </div>
+        <div class="item-btn-container">
+            <span index="0" class="on">1</span>
+            <span index="1">2</span>
+            <span index="2">3</span>
+            <span index="3">4</span>
+            <span index="4">5</span>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            var container = document.getElementById("container");
+            var aItem = document.getElementsByClassName("item");
+            var oItemBtn = document.getElementsByClassName("item-btn-container")[0];
+            var aItemBtn = oItemBtn.getElementsByTagName("span");
+
+            var backBtn = document.getElementById("back");
+            var goBtn = document.getElementById("go");
+            var interval  = 1500;
+            var timer;
+            var index = 0;
+            var myIndex = parseInt(aItemBtn[index].getAttribute('index'));
+            index = myIndex;
+
+
+            function play() {
+                timer = setTimeout(function () {
+                    goBtn.onclick();
+                    play();
+                }, interval);
+            }
+
+            function stop() {
+                clearTimeout(timer);
+            }
+
+            backBtn.onclick = function () {
+                if(index == 0)
+                    index = 4;
+                else if (index == 5)
+                    index = 0;
+                else
+                    index -= 1;
+                for(var i = 0; i < aItemBtn.length; i++){
+                    aItem[i].className = "item";
+                    aItem[index].className = "item item-show"
+                    aItemBtn[i].className = "";
+                    aItemBtn[index].className = "on";
+                }
+            };
+
+            goBtn.onclick = function () {
+                if(index == 4)
+                    index = 0;
+                else
+                    index ++;
+                for(var i = 0; i < aItemBtn.length; i++){
+                    aItem[i].className = "item";
+                    aItem[index].className = "item item-show";
+                    aItemBtn[i].className = "";
+                    aItemBtn[index].className = "on";
+                }
+            };
+
+            for(var i = 0; i < aItemBtn.length; i++){
+                aItemBtn[i].index = i;
+                aItemBtn[i].onmouseover = function () {
+                    for(var i = 0; i < aItemBtn.length; i++) {
+                        for (var j = 0; j < aItemBtn.length; j++) {
+                            aItemBtn[j].className = "";
+                            aItem[j].className = "item";
+
+                        }
+                        this.className = "on";
+                        aItem[this.index].className = "item item-show";
+                    }
+                }
+            }
+
+            container.onmouseover = function () {
+                stop();
+                backBtn.style.display = "block";
+                goBtn.style.display = "block";
+            };
+            container.onmouseout =function () {
+                play();
+                backBtn.style.display = "none";
+                goBtn.style.display = "none";
+            }
+            play();
+
+        }
+    </script>
+</body>
+</html>

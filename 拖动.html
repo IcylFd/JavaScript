@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>拖动</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		*{
+			margin:0;
+			padding:0;
+		}
+		#div{
+			height:200px;
+			width:200px;
+			background-color: #000;
+			position: absolute;
+			left:0px;
+			top:0px;
+		}
+	</style>
+</head>
+<body>
+	<div id="div"></div>
+</body>
+<script>
+	var oDiv = document.getElementById("div");
+	var move_x, move_y;
+	oDiv.onmousedown = function(e) {
+		move_x = e.clientX - this.offsetLeft;
+		move_y = e.clientY - this.offsetTop;
+
+		var that = this;
+
+		document.onmousemove = function(e){
+			that.style.left = e.clientX - move_x + 'px';
+			that.style.top = e.clientY - move_y + 'px';
+		}
+	}
+
+	oDiv.onmouseup = function(e){
+		document.onmousemove = null;
+	}
+ 
+</script>
+</html>

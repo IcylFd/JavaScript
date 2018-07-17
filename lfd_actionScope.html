@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //先介绍相关概念
+            // 1.执行环境：执行环境定义了变量或函数有权访问的其他数据，决定了它们各自的行为。执行环境的类型总共只有两种：全局和局部（函数）。
+            // 2.变量对象：每个执行环境都有一个与之关联的变量对象，环境中定义的所有变量和函数都保存在这个对象中。
+            // 3.每个函数都有自己的执行环境。当执行流进入一个函数时，函数的环境就会被推入一个环境栈中。而在函数执行之后，栈将其环境弹出，把
+            // 控制权返回给之前的执行环境。
+            // 4.当代码在一个环境中执行时，会创建变量对象的一个作用域链。作用域链的用途，是保证对执行环境有权访问的所有变量和函数的有序访问。作用域链的
+            // 前端，始终都是当前执行的代码所在环境的变量对象。如果这个环境是函数，则将其活动对象作为变量对象。活动对象在最开始时只包含一个变量，即arguments
+            // 对象。作用域链中的下一个变量对象来自包含环境，再下一个变量对象则来自下一个包含环境，这样一直延伸到全局执行环境。
+            // 5.标识符解析（所谓标识符，就是指变量 函数 属性的名字，或者函数的参数）是沿着作用域链一级一级搜索标识符的过程。搜索过程始终从作用域链的前端
+            // 开始，然后逐级地向后回溯，直至找到标识符为止。P77 通过例子介绍了查询标识符的过程，可以去看一下。
+            var color = 'red';
+            function changeColor(){
+                var myColor = 'blue';
+                color = 'green';
+                console.log('color is' + color);
+            }
+            changeColor(); // color is green; 在 changeColor 函数内部可以访问到包含它的全局环境中定义的 color 变量；
+           // console.log(myColor); // error: myColor is not defined; 全局环境无法访问到 changeColor 函数内部定义的 myColor 变量，因为
+                                    // 标识符解析是沿着作用域链一级一级 向上 搜索的过程。
+            // 再来一个例子:
+            var name = 'lfd';
+            function getName(){
+                var age = 20;
+                function temp(){
+                    var hello = 'hello';
+                    // 在这里可以访问到 hello age name 变量;
+                }
+                // 在这里可以访问到 age name 变量;
+            } 
+            // 在这里只能访问到 name 变量；
+
+            // 每个环境都可以向上搜索作用域链，以查询变量和函数名；但任何环境都不能通过向下搜索作用域链而进入另一个执行环境。
+            // 函数参数也被当做变量来对待，因此其访问规则与其执行环境中的其他变量相同。
+            
+            // 在了解了作用域链的相关概念以后，接下来介绍闭包。
+            // 闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数。例如:
+            function comparison(){
+                var name1 = 'lfd';
+                return function(){
+                    console.log(name1);
+                }
+            }
+            // 正常情况下，我们无法在 comparison 函数外部访问在函数内部定义的 name 变量,例如:
+            //console.log(name1); // error: name is undefined; 
+            // 如果利用闭包的话，则能够访问到 name1 变量,如下:
+            var getName = comparison();
+            getName(); // lfd; 我自己的理解：闭包相当于延长了作用域链;
+
+            // P179 下面那段话，通过例子介绍了作用域链形成的过程，去看一下。
+            // 作用域链本质上是一个指向变量对象的指针列表，它只引用但不实际包含变量对象。
+            // 作用域链的这种配置机制引出了一个值得注意的副作用，即闭包只能取得包含函数中任何变量的最后一个值，例如：
+
+            function createFunction(){
+                var result = new Array();
+                for( var i=0;i<10;i++){
+                    result[i] = function(){
+                        return i;
+                    }
+                }
+                return result;
+            }
+            var result = createFunction();
+            console.log( result[6]() ); // 10; 原因就是: 作用域链本质上是一个指向变量对象的指针列表；
+            // 在这个例子中，为了得到正确的结果，可以利用立即执行的匿名函数表达式，如下：
+            function createFunction1(){
+                var result = new Array();
+                for( var i = 0;i < 10; i++ ){
+                    result[i] = function(num){
+                        return function(){
+                            return num;
+                        }
+                    }(i);
+                }
+                return result;
+            }
+            var result1 = createFunction1();
+            console.log( result1[4]() ); // 4; 这个的确不太好理解，等你看到这儿 咱讨论一下吧；
+            
+            // 关于闭包的博客： 
+            // http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html
+    </script>
+</body>
+</html>

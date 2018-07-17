@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div id="box1">
+		<div id="box2"></div>
+		<div id="box3"></div>
+		<span id="span1"></span>
+	</div>
+	<script>
+		var oBox1 = document.getElementById("box1");
+		var oBox2 = document.getElementById("box2");
+		var oBox3 = document.getElementById("box3");
+		var oSpan1 = document.getElementById("span1");
+
+		/*console.log(oBox1.childNodes);  //获取子节点  回车符、注释 都算节点
+		console.log(oBox1.children);	//获取子元素 
+
+		console.log(oBox3.nextElementSibling);  //获取下一个兄弟元素    (IE678中是节点)
+		console.log(oBox3.nextSibling);			//获取下一个兄弟节点
+
+		console.log(oBox3.previousElementSibling);  //获取上一个兄弟元素    (IE678中是节点)
+		console.log(oBox3.previousSibling);			//获取上一个兄弟节点
+
+		console.log(oBox3.parentElement);  //获取父元素
+		console.log(oBox3.parentNode);     //获取父元素
+
+		console.log(oBox1.lastElementChild); //获取最后一个子元素
+		console.log(oBox1.lastChild); 		 //获取最后一个子节点*/
+
+		
+		function nextEleSibling(oBox) {
+			
+			while(oBox.nextSibling != null){
+				if(oBox.nextSibling.nodeType == 1){
+					return oBox.nextSibling;
+				}else{
+					oBox = oBox.nextSibling;
+				}
+			}
+			
+			return null;
+		}
+		
+		console.log(nextEleSibling(oBox2));
+	</script>
+</body>
+</html>

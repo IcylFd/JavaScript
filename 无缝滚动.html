@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无缝滚动</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #container{
+            width:600px;
+            height:300px;
+            border:3px solid #6b3fcc;
+            margin:0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        #panel{
+            width:2400px;
+            height:300px;
+            position: absolute;
+            z-index: 1;
+        }
+        .pic{
+            width: 200px;
+            height:200px;
+            float:left;
+            margin-left: 100px;
+            background-color: #9e97cc;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="panel">
+            <div class="pic">1</div>
+            <div class="pic">2</div>
+            <div class="pic">3</div>
+            <div class="pic">4</div>
+            <div class="pic">5</div>
+            <div class="pic">1</div>
+        </div>
+        <div id="demo2"></div>
+    </div>
+</body>
+
+<script>
+window.onload = function(){
+    scrollLeft();
+};
+function scrollLeft(){
+    var speed = 10;
+    var tab = document.getElementById('container');
+    var tab1 = document.getElementById('panel');
+    var tab2 = document.getElementById('demo2');
+    tab2.innerHTML = tab1.innerHTML;
+    function Marquee(){
+        if(tab2.offsetWidth - tab.scrollLeft <=0) {
+            tab.scrollLeft = 0;
+        }else{
+            tab.scrollLeft ++;
+        }
+
+    }
+    console.log(tab2.offsetWidth)
+    var timer = setInterval(Marquee,speed);
+    tab.onmouseover = function(){
+        clearInterval(timer);
+    };
+    tab.onmouseout = function(){
+        timer = setInterval(Marquee,speed);
+    }
+}
+</script>
+</html>

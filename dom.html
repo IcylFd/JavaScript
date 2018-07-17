@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div1" class="div2">div2</div>
+    <div class="divarr">a
+        <span class="span">11</span>
+        <span class="span">22</span>
+        <div class="span"></div>
+        <span class="span2"></span>
+    </div>
+    <div class="divarr">b</div>
+    <div class="divarr">c</div>
+    <div class="divarr">d</div>
+    <span class="divarr">span class="divarr"</span>
+    <span class="span">span class="span"</span>
+    <script>
+        //   封装getElementsByClassName方法
+        function getClassName (cName) {
+            var thisArr = [];
+            var tag = document.getElementsByTagName("*");
+            for(var i = 0; i < tag.length; i++){
+                if(tag[i].className == cName)
+                    thisArr.push(tag[i]);
+            }
+            return thisArr;
+        }
+
+
+        function getInnerClassName (cName, cNameRoot) {
+            var thisChildrenArr = [];
+            console.log(cName);
+           // var thisCNameRoot = cNameRoot||document;
+         if(cNameRoot = false){
+             getClassName(cName);
+         }
+         else {
+             var root = getClassName(cNameRoot);
+             //console.log(root);
+             for (var i = 0; i < root.length; i++) {
+                 for (var j = 0; j < (root[i].getElementsByTagName("*")).length; j++) {
+                     if ((root[i].getElementsByTagName("*"))[j].className == cName)
+                         thisChildrenArr.push(root[i].getElementsByTagName("*")[j]);
+                 }
+             }
+             return thisChildrenArr;
+         }
+        }
+
+       // console.log(getInnerClassName("span","divarr"));
+        console.log(getInnerClassName("span"));
+//        console.log(getClassName("divarr")[0].innerHTML)
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #menu{
+            width:80px;
+            border:1px solid #c3c3c3;
+            padding-left:0;
+            color: #333;
+            font-size: 14px;
+            list-style: none;
+            text-align: center;
+            border-bottom:none;
+            display: none;
+            position: absolute;
+        }
+        .menu_item{
+            border-bottom: 1px solid #c3c3c3;
+        }
+        .menu_item:hover{
+            background-color: #ccc;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul id="menu">
+            <li class="menu_item" id="item1">设置待办</li>
+            <li class="menu_item" id="item2">设置未读</li>
+            <li class="menu_item" id="item3">设置已读</li>
+            <li class="menu_item" id="item4">删除右键</li>
+        </ul>
+    </div>
+</body>
+<script>
+    var menu = document.getElementById("menu");
+    var menu_item = document.getElementsByClassName("menu_item");
+    document.oncontextmenu = function(e) {
+        var oX = e.clientX;
+        var oY = e.clientY;
+
+        menu.style.display = "block";
+        menu.style.left = oX + "px";
+        menu.style.top = oY + "px";
+
+        return false;  //阻止浏览器的默认行为
+    };
+
+   for(var i = 0; i < menu_item.length; i++){
+       menu_item[i].onclick = function () {
+           console.log(this.innerHTML);   //i是全局变量 在函数中循环已经结束 i=4
+       }
+   }
+
+    document.onclick = function() {
+        menu.style.display = "none";
+    }
+
+
+</script>
+</html>

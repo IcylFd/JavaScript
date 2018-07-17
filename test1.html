@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1{
+            background-color: #93aec8;
+            height:500px;
+        }
+        .div2{
+            background-color: #93aeee;
+            height:500px;
+        }
+        .div3{
+            background-color: #93dddd;
+            height:500px;
+        }
+        .div4{
+            background-color: #ccc;
+            height:500px;
+        }
+        .div5{
+            background-color: #357AE8;
+            height:500px;
+        }
+
+        .btn{
+            position: fixed;
+            width:100px;
+            bottom:10px;
+            right:10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    <div class="div4"></div>
+    <div class="div5"></div>
+    <input type="button" class="btn" value="返回顶部" onclick="ToTop()"> </input>
+</body>
+<script>
+    function ToTop() {
+        var timer = setInterval(function () {
+            var thistop = document.documentElement.scrollTop;
+            window.scrollTo(0,thistop-10);
+
+            if(thistop == 0)
+                clearInterval(timer);
+
+        },10);
+
+    }
+</script>
+</html>

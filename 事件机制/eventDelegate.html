@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+	</ul>
+	<button id="btn">添加</button>
+</body>
+<script>
+	var oUl = document.getElementsByTagName("ul")[0];
+	var oBtn = document.getElementById("btn");
+
+	oUl.onclick = function (e) {            //事件委托 委托给父级    用冒泡机制
+		console.log(e.target.innerText);  
+	}
+
+	oBtn.onclick = function(){
+		var newEle = document.createElement("li");
+		newEle.innerText = "111";
+		oUl.appendChild(newEle);
+	}
+</script>
+</html>

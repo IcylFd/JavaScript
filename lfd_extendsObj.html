@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 继承 P162
+        // 其基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法，主要是依靠原型链来实现的。
+        // 你还记得构造函数 原型 实例 之间的关系吗？ 不记得我也不说了....
+        function SuperType(){
+            this.supProperty = 'lfd';
+        }
+        SuperType.prototype.getValue = function(){
+            return this.supProperty;
+        }
+        function SubType(){
+            this.subProperty = ['ww','Tom'];
+        }
+        // 上面我们定义了两个构造函数，并且为它们添加了一些属性和方法
+        // 如果我们让 SubType 的原型对象等于 SuperType 的一个实例，结果会怎么样呢？
+        SubType.prototype = new SuperType(); // 当你输入这句话之后，新的原型链的关系在 P163 我画了一个，....书上的那个更标准(我画完才看到的)
+        
+        SubType.prototype.getSubValue = function(){ // 注意：如果将这个方法的定义写在上面那句表达式之前，那么接下来创建的实例将不会包含
+            return this.subProperty;                //   getSubValue 方法
+        }
+        var instance = new SubType();
+        console.log(instance.supProperty); // lfd;
+        console.log(instance.getValue()); // lfd;
+        var instance1 = new SubType();
+        console.log(instance.supProperty === instance1.supProperty); // true;
+        console.log(instance.subProperty === instance1.subProperty); // false;
+        
+        // 还有一点需要注意，在通过原型链实现继承时，不能使用对象字面量创建原型方法，因为这样做就会重写原型链
+        function Top(){
+            this.topName = 'lfd';
+        }
+        Top.prototype.getTopName = function(){
+            return this.topName;
+        }
+        function Bottom(){
+            this.bottomName = 'ww';
+        }
+        Bottom.prototype = new Top();
+
+        Bottom.prototype = {
+            say: 'hello'
+        }
+        var bt = new Bottom();
+        console.log(bt.topName); // undefined;
+
+        // 通过实现原型链，本质上扩展了原型搜索机制 P164;
+        // 别忘了默认的原型 Object.prototype !!! P164;
+        // 原型链的两个问题 P166-P167 内容不多，你去看书吧(1.引用类型的值 2.不能向超类型的构造函数传递参数)
+
+        // 借用构造函数和组合继承 你也自己看吧，理解了前面的 这个其实不难 （主要是我写不动了...哈哈哈）
+    </script>
+</body>
+</html>

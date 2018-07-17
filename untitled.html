@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>title</title>
+<script src="jquery-2.1.1.min.js"></script>
+<style type="text/css"  src="js/jquery-3.2.1.js">
+.menubar 
+ {position:absolute;
+  top:10px;
+  width:100px;
+  height:20px;
+  cursor:default;
+  border-width:1px;
+  border-style:outset;
+  color:#99ffff;
+  background:#669900;
+}
+.son
+  {
+    top:32px;
+    width:90px;
+    display: none;
+    border-width:2px;
+    border-style:outset;
+    border-color:white sliver sliver white;
+    background:yellow;
+    padding:5px;
+ 
+}
+
+.menu a
+  {
+    text-decoration:none;
+    color:#99fff;
+   }
+.menu a:hover
+   {
+     color:#ffffff;
+    }
+
+</style>
+</head>
+
+<body>
+
+
+
+<table width="400" border="0" align="center" cellpadding="0" cellspacing="0" style="font-size:15px">
+<tr>
+  <td  width="20%">
+     <div align="center" id="td1" class="menubar" index="0">
+     <div class="mother">1</div>
+       <div align="left" id="div1"  class="son">
+           <a href="#" >a</a><br>
+           <a href="#" >b</a><br>
+           <a href="#" >c</a><br>
+        </div>
+      </div>
+   </td>
+   <td  width="20%">
+     <div align="center" id="td2" class="menubar" index="1">
+       <div class="mother">2</div>
+       <div align="left" id="div2"  class="son">
+           <a href="#" >a</a><br>
+           <a href="#" >b</a><br>
+           <a href="#" >c</a><br>
+        </div>
+      </div>
+   </td>
+   <td  width="20%">
+     <div align="center" id="td3" class="menubar" index="2">
+       <div class="mother">3</div>
+       <div align="left" id="div3"  class="son">
+           <a href="#" >a</a><br>
+           <a href="#" >b</a><br>
+           <a href="#" >c</a><br>
+        </div>
+      </div>
+   </td>
+   <td  width="20%">
+     <div align="center" id="td4" class="menubar"  index="3">
+       <div class="mother">4</div>
+       <div align="left" id="div4"  class="son">
+           <a href="#" >a</a><br>
+           <a href="#" >b</a><br>
+           <a href="#" >c</a><br>
+        </div>
+      </div>
+   </td>
+</tr>
+</table>
+
+<script type="text/javascript"> 
+$(document).ready(function(){
+  // for(var i = 0; i < 4; i++){
+  // //console.log($(".menubar .son:eq("+i+")"));
+  // $(".menubar:eq("+i+")").mouseenter(function(event) {
+  //   console.log($(".menubar .son:eq("+i+")"));
+  //   console.log("enter");
+  //   $(".menubar .son:eq("+i+")").show();
+  // });
+
+  // $(".menubar:eq("+i+")").mouseleave(function(event) {
+  //   console.log("leave");
+  //   $(".menubar .son:eq("+i+")").hide();
+  // });
+
+
+  $(".mother").mouseenter(function(){
+                $(this).next().show();
+                return false;
+            });
+  $(".mother").mouseleave(function(){
+                $(this).next().hide();
+                return false;
+            });
+  $(".son").mouseenter(function(){
+                $(this).next().show();
+                return false;
+            });
+  $(".son").mouseleave(function(){
+                $(this).next().show();
+                return false;
+            });
+
+
+
+// $("#td"+1).mouseleave(function(){
+//     $("#div"+1).hide();
+//   });
+// $("#td"+1).mouseenter(function(){
+//   $("#div"+1).show();
+//   });
+// $("#td"+2).mouseleave(function(){
+//     $("#div"+2).hide();
+//   });
+// $("#td"+2).mouseenter(function(){
+//   $("#div"+2).show();
+//   });
+// $("#td"+3).mouseleave(function(){
+//     $("#div"+3).hide();
+//   });
+// $("#td"+3).mouseenter(function(){
+//   $("#div"+3).show();
+//   });
+// $("#td"+4).mouseleave(function(){
+//     $("#div"+4).hide();
+//   });
+// $("#td"+4).mouseenter(function(){
+//   $("#div"+4).show();
+//   });
+}); 
+</script>
+</body>
+</html>

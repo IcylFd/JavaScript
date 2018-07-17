@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>详情页面（放大镜）</title>
+	<style type="text/css" media="screen">
+	*{
+		margin:0px;
+		padding:0px;
+	}
+		
+		#pic{
+			width:400px;
+			height:400px;
+			float:left;
+			position: relative;
+		}
+		#pic img{
+			width:400px;
+			height:400px;
+		}
+		#pic-b{
+			width:400px;
+			height:400px;
+			float:left;
+			margin-left: 20px;
+			position: relative;
+			overflow: hidden;
+		}
+		#pic-big{
+			width:800px;
+			height:800px;
+			position: absolute;
+			left:0;
+			top:0;
+		}
+		#magnifier{
+			width:200px;
+			height:200px;
+			background-color: rgba(255,255,255,.5);
+			position: absolute;
+			left:0;
+			top:0;
+			display: none;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="pic">
+		<img src="../焦点轮播图：Airplane/img/b.jpg" alt="">
+		<div id="magnifier"></div>
+	</div>
+	<div id="pic-b">
+		<img src="../焦点轮播图：Airplane/img/b.jpg" alt="" id="pic-big">
+	</div>
+	
+</body>
+<script>
+	var oPic = document.getElementById("pic");
+	var oMag = document.getElementById("magnifier");
+	var oPicB = document.getElementById("pic-big");
+
+
+	oPic.onmouseenter = function(e){
+		oMag.style.display = "block";
+		oPic.onmousemove = function(e){
+			var moveLeft = e.clientX - 100;
+			var moveTop = e.clientY - 100
+		
+			if(moveLeft <= 0){
+				moveLeft = 0;
+			}
+			if(moveLeft >= 200){
+				moveLeft = 200;
+			}
+			if(moveTop <= 0){
+				moveTop = 0;
+			}
+			if(moveTop >= 200){
+				moveTop = 200;
+			}
+			oMag.style.left =  moveLeft + 'px';
+			oMag.style.top = moveTop + 'px';
+			oPicB.style.left = -moveLeft*2 + 'px';
+			oPicB.style.top = -moveTop*2 + 'px';
+		}
+	}
+
+	oPic.onmouseleave = function(){
+		oMag.style.display = "none";
+	}
+
+
+	
+</script>
+</html>

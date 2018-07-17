@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        // 创建对象
+            //  1.构造函数模式------------------------
+            function Person(name,age){
+                this.name = name;
+                this.age = age;
+                this.getName = function (){
+                    return this.name;
+                }
+            }
+            var person1 = new Person('lfd',20);
+            var person2 = new Person('ww',21);
+            // new操作符实际上经历的四个步骤 P145; 
+            // 构造函数模式的缺点: 每个方法都要在每个实例上重新创建一遍，例如:
+            console.log(person1.getName === person2.getName ); // false;
+            console.log(person1.name === person2.name ); //false; 如果不要求所有实例共享某个属性的话，属性在构造方法内定义毫无问题;
+            // 解决方法一 : 通过把函数定义转移到构造函数外部
+            function Person1(name,age){
+                this.name = name;
+                this.age = age;
+                this.getName = getName;
+            }
+            function getName(){
+                return this.name;
+            }
+            var person11 = new Person1('lfd',20);
+            var person12 = new Person1('ww',21);
+            console.log(person11.getName === person12.getName); //true;
+            // 这种解决方法又引发了新的问题: 如果对象需要定义很多方法，那么就要定义很多个全局函数，于是我们这个自定义的引用类型就
+            // 丝毫没有封装性可言了。 所以，需要学习原型模式;
+
+            //  2.原型模式-------------------------
+            // 我们创建的每个函数都有一个prototype(原型)属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以由特定类型的所有
+            // 实例共享的属性和方法
+            function Num(){
+                
+            }
+            Num.prototype.name = 'lfd';
+            Num.prototype.age = 20;
+            Num.prototype.getName = function(){
+                return this.name;
+            }
+            var num1 = new Num();
+            var num2 = new Num();
+            console.log(num1.name); // lfd;
+            console.log(num2.name); // lfd;
+            console.log(num1.getName === num2.getName ); // true; 
+            // 与构造函数模式不同的是，新对象的这些属性和方法是由所有实例共享的。换句话说，num1和num2访问的都死同一组属性和同一个方法。
+            // 此处对原型对象上属性和方法的定义写在构造函数的外部，如果写在构造函数内部的话，将会导致每创建一个实例，都会刷新一遍原型对象的
+            // 属性和方法，例如:
+            var flag = 0;
+            function Num1(){
+                Num1.prototype.name = 'lfd';
+                Num1.prototype.friends = ['Tom','Jack'];
+                Num1.prototype.getName = function(){
+                    return this.name;
+                } 
+            }
+            var num11 = new Num1();
+            var f1 = num11.friends;
+            console.log(f1 === num11.friends); //true;
+            var num12 = new Num1();
+            var f2 = num12.friends;
+            console.log(f1 === f2); // false;
+            console.log(f1 === num11.friends); // false; 这个由于创建了第二个实例以后，刷新了原型对象上的属性和方法，尽管两次的friends
+                                               // 属性看起来相同，但指向却是内存中不同的两个数组。 此时num11.friends指向的实际上是创建num12
+                                               // 时定义的 Num1.prototype.friends 属性。 因此此处得到的是 false;
+            // 因此，将原型对象的属性和方法定义在构造函数内部，造成了很大的内存浪费。
+            // 要深入理解原型模式的工作原理，必须先理解原型对象的性质 P148 (必须仔细读一遍)
+            // 以下代码简单介绍了构造函数 实例与原型对象的关系
+            function Obj(){
+
+            }
+            var obj1 = new Obj();
+            console.log(Obj.prototype === obj1.__proto__); // true;
+            console.log(Obj === Obj.prototype.constructor); // true;
+            console.log(obj1.__proto__.constructor === Obj); // true;
+            // P149中间黑笔括起来的部分，介绍了通过原型链访问给定属性的基本过程。
+            // 虽然可以通过对象实例访问保存在原型中的值，但却不能通过对象实例重写原型中的值。如果我们在实例中添加了一个属性，而该属性
+            // 与实例原型中的一个属性同名，那么该属性将会屏蔽原型中的那个属性。 例如:
+            function Obj1(){
+                Obj1.prototype.name = 'lfd';
+                Obj1.prototype.getName = function(){
+                    return this.name;
+                }
+            }
+            var obj11 = new Obj1();
+            var obj12 = new Obj1();
+            obj11.name = 'ww';
+            console.log(obj11.name); // ww; 来自实例
+            console.log(obj12.name); // lfd; 来自原型。 可见obj11.name = 'ww';并没有重写原型对象上的name属性，只是为obj11这个实例
+                                     // 添加了一个实例属性。
+            delete obj11.name;
+            console.log(obj11.name); // lfd; 使用delete删除了obj11实例上的name属性以后，自然就可以访问到原型对象上的name属性了。
+            //更简单的原型语法
+            // 你这么懒肯定会注意到通过上面的方法每次为原型对象添加一个属性或方法，都需要敲一遍Obj1.prototype。为了减少不必要的输入，也为了从
+            // 视觉上更好地封装原型的功能，更常见的做法是用一个包含所有属性和方法的对象字面量来重写整个原型对象。如下所示:
+            function Hello(){
+
+            }
+            Hello.prototype = {
+                name : 'lfd',
+                getName : function(){
+                    return this.name;
+                }
+            }
+            var he = new Hello();
+            console.log(he.name); // lfd;
+            he.getName(); // lfd;
+            // 虽然最终结果相同，但有一个例外：constructor属性不再指向Hello了。如果contructor的值真的很重要，可以像下面这样特意将它
+            // 设置回适当的值。
+            Hello.prototype.constructor = Hello; // 注意，以这种方式重设constructor属性会导致它的[[Enumerable]]特性被设置为true。
+                                               // 默认情况况下，原生的constructor属性是不可枚举的, 因此你可以试试Object.defineProperty()
+            Object.defineProperty(Hello.prototype,'constructor',{
+                enumerable: false,
+                value: Hello
+            });
+            // 原型的动态性 P156
+            // 由于在原型中查找值得过程是一次搜索，因此我们对原型对象所做的任何修改都能够立即从实例上反映出来---即便是先创建了实例
+            // 后修改原型也照样如此。
+            function Root(){
+
+            }
+            var root = new Root();
+            Root.prototype.sayHi = function(){
+                console.log('hello lfd');
+            };
+            root.sayHi(); // hello lfd; 这是因为实例与原型之间的连接只不过是一个指针，而非一个副本。
+            // 尽管可以随时为原型添加属性和方法，并且修改能够立即在所有对象实例中反映出来，但是如果是重写整个原型对象，那么情况就不一样了。
+            // 我们知道，调用构造函数时会为实例添加一个指向最初原型的__prototype__指针，而把原型修改为另外一个对象就等于切断了构造函数与
+            // 最初原型之间的联系。看下面的例子:
+            function Root1(){
+
+            }
+            var root11 = new Root1();
+            Root1.prototype = {
+                name: 'lfd',
+            }
+            console.log(root11.name); // undefined; 
+            //当然，如果将重写原型对象放在创建实例之前，则不会出现以上问题。
+            function Root2(){
+
+            }
+            Root2.prototype = {
+                name: 'lfd'
+            }
+            var root21 = new Root2();
+            console.log(root21.name); // lfd; 记住：在创建实例时，实例内部的指针__proto__会指向!当前时刻!构造函数内部的prototype所
+                                      // 指向的原型对象
+            // 原型对象的问题: P158 (太多了，你自己去看吧-.-)
+            // 为了避免原型模式与构造函数模式带来的问题，下面介绍一种最常见的方式
+            // 3. 组合使用构造函数模式和原型模式------------------------------------
+            // 构造函数用于定义实例属性，而原型模式用于定义方法和共享的属性。
+            function End(name,age){
+                this.name = name;
+                this.age = age;
+                this.friends = ['Tom','Jack'];
+            }
+            End.prototype = {
+                getName: function(){
+                    return this.name;
+                }
+            }
+            var end1 = new End('lfd',20);
+            var end2 = new End('ww',21);
+            end1.friends.push('aa');
+            console.log(end1.friends); // ['Tom','Jack','aa'];
+            console.log(end2.friends); // ['Tom','Jack'];
+            console.log(end1.getName === end2.getName); // true;
+            // P159下面 介绍了动态原型模式，你感兴趣的话可以去看看
+    </script>
+</body>
+<ml>

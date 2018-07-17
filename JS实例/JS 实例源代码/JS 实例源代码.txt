@@ -1,0 +1,5 @@
+JavaScript 实例源代码
+
+index-1.htm  可以直接运行请运行
+
+index.htm    需要IIS环境运行，否则有些项只能打开目录!
