@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    function foo(name,age="20"){    //默认值
+//        console.log(name,age);
+//    }
+//    foo("name","19");
+
+
+//    function foo(name="xiaoming",age="10",school){
+//
+//    }
+//    console.log(foo.length);   //返回没有默认值的参数的个数（从前往后找，找到有默认参数的，后面就不计数了）
+
+
+
+//    'use strict';   //严格模式
+//    a = "123";
+//    consoole.log(a);
+
+
+
+
+//    function a (){
+//        console.log(this);
+//    }
+//
+//    setTimeout(function(){
+//        console.log(this);
+//    },1000);
+//    a();
+
+
+
+//    var name = "zhangsan";
+//    var obj = {
+//        name:"xiaoming",
+//        showName:function () {
+//            console.log(this.name);
+//            var that = this;
+//            function foo() {
+//                console.log(that.name);
+//            }
+//            foo();
+//        }
+//    };
+//
+//    obj.showName();
+
+
+    'use strict';
+    function foo(a,a,c){
+        console.log(a,a,c)
+    }
+    foo("a","b","c");
+</script>
+</body>
+</html>

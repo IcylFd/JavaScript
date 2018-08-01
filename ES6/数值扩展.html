@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var a = 8;
+//    console.log(a.toString(8));    //转换几进制
+
+//    var a = 0B101;
+//    var b = 0o10;
+//    console.log(b);     //转换二进制
+
+    console.log(Number.isFinite("3"));  //是否是无穷大
+    console.log(isNaN("a"));     //是否不是数字
+
+    console.log(Number.parseInt(5.2));
+    console.log(Number.isInteger(5.2));
+
+    console.log(Math.pow(2,53));     //js中最大数值 2的53次方
+    console.log(Number.isSafeInteger(Math.pow(2,53)));  //是否是安全数字
+    console.log(Number.isSafeInteger(Math.pow(2,53)-1));
+    console.log(Number.MAX_SAFE_INTEGER);
+    console.log(Number.MIN_SAFE_INTEGER);
+    //10000的阶乘 -> 用字符串拼接的方式
+
+
+    console.log(Math.trunc(1.5)); //向下取整
+
+    console.log(Math.sign(3));    //正数返回1
+    console.log(Math.sign(0));    //正数返回0
+    console.log(Math.sign(-3));   //正数返回-1
+
+</script>
+</body>
+</html>

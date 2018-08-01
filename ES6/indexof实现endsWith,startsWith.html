@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str1 = "hello world";
+    let str2 = "hello";
+    String.prototype.sw = function (str2) {          //对象下加属性或方法 用原型
+        if(this.indexOf(str2) == 0) {
+            return true;
+        }
+        return false;
+    };
+
+    String.prototype.ew = function (str2) {
+        if(this.indexOf(str2) == this.length - str2.length){
+            return true;
+        }
+        return false;
+    }
+
+    console.log(str1.sw(str2));
+    console.log(str1.ew("world"));
+    console.log(String.prototype);
+</script>
+</body>
+</html>
