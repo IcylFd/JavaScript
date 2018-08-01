@@ -81,8 +81,8 @@
       <file leaf-file-name="字符串扩展.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ES6/字符串扩展.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+            <state relative-caret-position="151">
+              <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -278,7 +278,7 @@
       <workItem from="1528594040658" duration="4534000" />
       <workItem from="1528703966900" duration="2441000" />
       <workItem from="1533092460455" duration="6728000" />
-      <workItem from="1533105326813" duration="264000" />
+      <workItem from="1533105326813" duration="806000" />
     </task>
     <task id="LOCAL-00001" summary="jiegou">
       <created>1533095020903</created>
@@ -336,11 +336,18 @@
       <option name="project" value="LOCAL" />
       <updated>1533105548015</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="jiegou">
+      <created>1533105670539</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1533105670539</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110489000" />
+    <option name="totallyTimeSpent" value="111031000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -747,8 +754,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ES6/字符串扩展.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        <state relative-caret-position="151">
+          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
           <folding />
         </state>
       </provider>
