@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    function a(...arg) {        //扩展运算符
+//        console.log(arg);
+//    }
+//    a("a","b","c","d","e");
+
+
+
+//    let arr = [1,2,3,4];
+//    let arr1 = ["a",...arr,"b"];
+//    console.log(arr1);
+
+
+
+//    let arr = [1,2,3,4];
+//    let arr2 = [...arr];    //数组复制（深克隆）
+//    arr[0]="a";
+//    console.log(arr2);
+
+
+
+
+//    let arr = [1,2,3];
+//    let arr2 = [4,5,6];
+//
+////    let arr3 = arr.concat(arr2);
+//
+//    arr3 = [...arr,...arr2]      //数组合并
+//    console.log(arr3);
+
+
+
+
+    let obj1 = {
+        name:"xiaoming",
+        age:"20"
+    }
+    let obj2 = {
+        name:"xiaohong",
+        school:"linda",
+        teacher:{
+            name:"zhangsan"
+        }
+    }
+
+    obj1.age = "10";
+    let obj3 = {...obj1,...obj2};    //半深克隆
+    obj2.teacher.name="lisi";
+    console.log(obj3);
+
+
+    //rest运算符只能放在最后！
+</script>
+</body>
+</html>
