@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>
+	</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<script>
+	/*	console.log(a);     //f a(){ }    方法预定义
+		var a = 10;
+		console.log(a);		//10
+		function a() {
+			console.log("abc");
+		}
+		a = "123";
+		a();    //报错 a is not a function;
+	*/
+
+
+	var aLi = document.querySelectorAll("ul li");
+	for(var i = 0; i < aLi.length; i++){
+		(function(key){
+			aLi[i].onclick = function(){
+			console.log(key);
+			}
+		})(i);                  //立即执行函数
+	}
+
+//普通函数、调用
+	var abc = function(){
+		console.log(2);
+	}
+
+	abc();
+
+//立即执行函数
+	(function(){
+		console.log(2);
+	})();
+
+
+
+
+
+	function a(){
+		b = 10;  //全局变量
+	};
+	a();
+	console.log(b);   //10
+
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		// let a = 10;
+		// let a = "1";
+		// console.log(a);     //不允许重复定义
+
+		// console.log(b);       //不存在变量提升
+		// let b = 1;
+
+
+		// function a () {
+		// 	/*
+		// 	暂时性死区
+		// 	*/
+		// 	console.log(a);
+		// 	let a = 10;
+		// }
+		// a();
+
+
+		// if(true){
+		// 	let a = 10;   //块级作用域
+		// }
+		// console.log(a);   //not defined
+
+
+
+		// const a = "123";
+		// a = 1;
+		// console.log(a);   //常量不可以更改
+
+
+		// const obj = {
+		// 	name:"xiaoming"
+		// }
+		// obj.name = "xiaohong";
+		// console.log(obj.name);   //xiaohong
+
+
+		// const obj = {
+		// 	age:"19"
+		// }
+		// console.log(obj.age);   //报错
+
+
+
+		const obj = {
+			name:"xiaoming"
+		}
+		Object.freeze(obj);
+		obj.name="xiaohong";
+		console.log(obj.name);
+
+
+	</script>
+</body>
+</html>
