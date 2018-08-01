@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">box</div>
+<script>
+//    function foo(a,b){
+//        console.log(a+b);
+//    }
+//    foo(1,2);
+//
+//
+//    let fun = (a,b) => a+b;      //函数体只有一条语句 可省略大括号、return
+////    let fun = (a,b) => void a+b;   //不返回
+//    console.log(fun(3,2))
+    
+    
+//    var box = document.getElementById("box");
+//    box.onclick = () => {
+//        console.log(this);   //箭头函数this 指向声明函数的作用域  -> Window
+//    }
+
+
+//    box.onclick = function () {
+//        setTimeout(function () {
+//            console.log(this);      //Window
+//        },1000)
+//    }
+
+//    box.onclick = function () {
+//        setTimeout(()=>{
+//            console.log(this);      //box   因为setTimeout是在box作用域内生成的
+//        },1000);
+//    }
+
+
+
+//    let foo = () => {
+//        console.log(arguments);   //箭头函数不能用arguments  用rest
+//    }
+
+    let foo = (...arg) => {
+        console.log(...arg);
+}
+
+    foo("a","b","c");
+
+</script>
+</body>
+</html>

@@ -53,11 +53,31 @@
 //    obj.showName();
 
 
-    'use strict';
-    function foo(a,a,c){
-        console.log(a,a,c)
+//    'use strict';
+//    function foo(a,a,c){
+//        console.log(a,a,c)
+//    }
+//    foo("a","b","c");
+
+//    name="zhangsan";
+//    var obj = {
+//        name:"xiaoming"
+//    };
+//    with(obj){                //改变this指向，不推荐使用
+//        console.log(name);
+//    }
+
+
+    function foo(key){
+        if(key == 1){
+            return 1;
+        }else {
+            return key * arguments.callee(key - 1);    //递归调用  严格模式不推荐使用
+
+        }
     }
-    foo("a","b","c");
+
+    console.log(foo(5));
 </script>
 </body>
 </html>
