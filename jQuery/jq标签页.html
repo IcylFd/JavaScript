@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{
+            margin: 0;
+            padding: 0;
+        }
+        .page{
+            width: 500px;
+            margin:0 auto;
+            border:1px solid #333;
+        }
+        .nav-container{
+            background-color: #333;
+            height: 40px;
+            line-height: 40px;
+            color: #f1f1f1;
+        }
+        .nav{
+            list-style: none;
+            border-bottom: 1px solid #333;
+        }
+        .nav li{
+            float: left;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .li_mouseover{
+            background-color: #ccc;
+            color:#333;
+        }
+        .content{
+            display: none;
+        }
+        .content-show{
+            display: block;
+        }
+        .clearfix::after{
+            content:"";
+            display: block;
+            clear:both;
+        }
+	</style>
+</head>
+<body>
+	<div class="page">
+        <div class="nav-container">
+            <ul class="nav clearfix">
+                <li class="li_mouseover">第一课</li>
+                <li>第二课</li>
+                <li>第三课</li>
+            </ul>
+        </div>
+        <div class="content content-show">
+            <div>content1content1content1content1content1content1</div>
+        </div>
+        <div class="content">
+            <div>content2content2content2content2content2content2
+                content2content2content2content2content2content2
+                content2content2content2content2content2content2</div>
+        </div>
+        <div class="content">
+            <div>content3content3content3content3content3
+                content3content3content3content3content3content3
+            </div>
+        </div>
+    </div>
+
+
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+    	$("li").on("mouseover",function(){
+    		$(this).toggleClass("li_mouseover").siblings().removeClass("li_mouseover");
+
+    		$(".content:eq("+$(this).index()+")").toggleClass("content-show").siblings().removeClass("content-show");
+    	})
+    </script>
+</body>
+</html>

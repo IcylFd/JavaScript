@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		body,html{
+			height:100%;
+		}
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.clearfix::after{
+			content: "";
+			display: block;
+			clear:both;
+		}
+		.container{
+			width:700px;
+			height:100%;
+			margin: 0 auto;
+		}
+		.header{
+			height:150px;
+			/*position: fixed;*/
+			/*top:0;*/
+		}
+		.top{
+			width:700px;
+			height:90px;
+			font-size:18px;
+			line-height: 90px;
+			background-color: #fff;
+			margin-left: 20px;
+		}
+		.tag{
+			height:60px;
+			background:#333;
+		}
+		.tag span{
+			float: left;
+			margin-top:-10px;
+		}
+		.tag ul{
+			height:60px;
+			margin-left:20px;
+			line-height: 60px;
+		}
+		.tag li{
+			float:left;
+			color:#fff;
+			margin:10px;
+			font-size:18px;
+		}
+		.tag li div{
+			height:25px;
+			width:30px;
+			float:left;
+			margin-top: 5px;
+			margin-right: 5px;
+		}
+		.tag li:first-child div{
+			background-color: #fff;
+		}
+		.tag li:nth-child(2) div{
+			background-color: #2f79f4;
+		}
+		.tag li:last-child div{
+			background-color: #e2167b;
+		}
+
+		.content{
+			height:100%;
+			background-color: #333;
+			border-top:1px solid #686868;
+			margin:0 auto;
+			justify-content: center;
+			/*margin-top:100px;*/
+		}
+		.seats{
+			border-bottom:1px solid #686868;
+			padding:20px;
+			height:auto;
+		}
+		.seats ul{
+			margin-left: 20px;
+			display: block;
+		}
+		.seats ul li:nth-child(5n){
+			margin-right:200px;
+		}
+		.seats ul li:nth-child(10n){
+			margin-right:10px;
+		}
+		.seats li{
+			width:30px;
+			height:25px;
+			background-color: #fff;
+			float:left;
+			margin-left:10px;
+			margin-top:10px;
+		}
+
+		.selected-seats{
+			height:60px;
+			color:#fff;
+			font-size: 16px;
+		}
+		.selected-seats>div{
+			height:40px;
+			line-height: 40px;
+		}
+		.selected-seats span:first-child{
+			display: block;
+			float:left;
+			margin-left: 20px;
+		}
+		.selected-seats span:last-child{
+			float:right;
+			margin-right: 20px;
+		}
+		.number{
+			margin-left:20px;
+			text-align: center;
+		}
+		.number div{
+			color:#d9991f;
+			width:80px;
+			height:40px;
+			border:1px solid #d9991f;
+			background-color: #333;
+			float:left;
+			margin-right:20px;
+			margin-bottom:20px;
+		}
+
+		.bottom{
+			height:80px;
+			position:fixed;
+			bottom:0px;
+			float:left;
+
+		}
+
+		.price{
+			height:80px;
+			width:500px;
+			background-color: #555;
+			font-size:20px;
+			color:#fff;
+			float:left;
+			line-height: 80px;
+		}
+		.price div{
+			margin-left: 20px;
+			color:#a2a2a2;
+		}
+		.price span:first-child{
+			color:red;
+		}
+		.price span:nth-child(2){
+			margin-left:20px;
+			font-size: 12px;
+		}
+		.price span:last-child{
+			font-size: 12px;
+		}
+		.btn{
+			width:200px;
+			height:80px;
+			background-color: #d9991f;
+			font-size:22px;
+			float:left;
+			border:none;
+		}
+		.red{
+			background-color: #e2167b !important;
+		}
+		.gray{
+			background-color: #ccc !important;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<div class="top">
+				
+			</div>
+			<div class="tag clearfix">
+				<ul>
+					<li><div></div><span>可选</span></li>
+					<li><div></div><span>已选</span></li>
+					<li><div></div><span>已售</span></li>
+				</ul>
+
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="seats">
+				
+			</div>
+			<div class="selected-seats">
+				<div>
+					<span>已选座位</span>
+					<span>最多可选择5个座位</span>
+				</div>
+				
+				<div class="number">
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class="price">
+				<div>
+					合计：<span>￥0</span><span>￥99*</span><span>0</span>
+				</div>
+			</div>
+			<button type="button" class="btn">确认选座</button>
+		</div>
+	</div>
+
+
+	<script src="jquery-3.3.1.js"></script>
+	<script>
+		var selectNum = 0;
+		var price = 0;
+
+		function p(s) {
+    		return s < 10 ? '0' + s: s;
+		}
+
+		var myDate = new Date();
+		var month=myDate.getMonth()+1;
+		var date=myDate.getDate(); 
+		var h=myDate.getHours();
+		var m=myDate.getMinutes();
+
+		var cList = "";
+
+		$(".top").text("今天"+p(month)+"月"+p(date)+"日 "+p(h)+"："+p(m));
+		for(var i = 0; i < 10; i++){
+			cList += "<ul class='clearfix'>"
+			for(var j = 0; j < 10; j++){
+				cList += "<li id='seats-cell-"+i+"-"+j+"'></li>";
+			}
+			cList += "</ul>"
+
+		}
+
+		$(".seats").html(cList);
+
+		for(var i = 0; i < 10; i++){
+			for(var j = 0; j < 10; j++){
+				$("#seats-cell-"+i+"-"+j).prop("isSelect",false);
+				$("#seats-cell-"+i+"-"+j).prop("isSaled",false);
+
+
+				$(".seats ul").on("click","#seats-cell-"+i+"-"+j,function(){
+					var x = parseInt(this.id.slice(11,12))+1;
+					var y = parseInt(this.id.slice(13,14))+1;
+
+					if(!$(this).prop("isSelect") && !$(this).prop("isSaled") && $(".number div").length < 5){
+						$(this).addClass('red');
+						selectNum++;
+						$(this).prop("isSelect",true);
+						$(".number").append("<div id='seat-"+x+"-"+y+"'>"+x+"排"+y+"座"+"</div>")
+						
+					}else if($(this).prop("isSelect")){
+						$(this).removeClass('red');
+						$(this).prop("isSelect",false);
+						selectNum--;
+						$("#seat-"+x+"-"+y).remove();
+					}
+
+					price = selectNum*99;
+					$(".price span:eq(0)").text("￥"+price);
+					$(".price span:eq(2)").text(selectNum);
+
+					
+				})
+
+				// console.log($(".number div").length);
+				if($(".number div").length == 5){
+
+					if(!$("#seats-cell-"+i+"-"+j).prop("isSelect") && !$("#seats-cell-"+i+"-"+j).prop("isSaled")){
+						$("#seats-cell-"+i+"-"+j).addClass('gray')
+					}
+				}
+
+			}
+		}
+
+
+		function render(){
+			for(var i = 0; i < 30; i++){
+				var rand_i,rand_j;
+				rand_i = parseInt(Math.random()*10);
+				rand_j = parseInt(Math.random()*10);
+				$("#seats-cell-"+rand_i+"-"+rand_j).prop("isSaled",true);
+				$("#seats-cell-"+rand_i+"-"+rand_j).css("background-color","#2f79f4")
+			}			
+		}
+
+		render();
+
+
+ //获取坐标 index   第几行：父级index
+ //设置属性 sign="i排j座"
+ //将属性放在数组里 
+
+
+	</script>
+</body>
+</html>

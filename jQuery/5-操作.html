@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div id="box">
+		hello world!
+	</div>
+
+	<div id="box2"></div>
+
+	<div class="container">
+		<!-- <div class="inner">Hello</div>
+		<div class="boo"></div>
+		<div class="inner">Goodbye</div> -->
+		<div class="hello">Hello</div>
+		<div class="goodbye">Goodbye</div>
+
+	</div>
+	<script src="jquery-3.3.1.js"></script>
+	<script>
+		var ht = $("<p>abc</p>")
+		// $("#box").append(ht);
+		// ht.appendTo("#box");
+		// $("#box").prepend(ht);
+
+
+		// $("#box").text("<p>123</p>");
+		// $("#box2").html("<p>123</p>");
+
+
+		// $('.inner').wrap('<div class="new"></div>');
+		// $(".inner").wrapAll('<div class="new"></div>');
+		// $(".inner").wrapInner('<div class="new"></div>');
+
+
+		// $(".container").after("<div class='new'></div>");
+
+
+		/*$(".inner").after("<p>Test</p>"
+		$("<p>test</p>").insertAfter('.inner');*/
+
+
+	/*	$(".container").empty();   //dom还在，内容没了
+		$(".container").remove();  //dom移除
+	*/
+
+
+	/*	$('<h2>new</h2>').replaceAll(".inner");
+		$(".inner").replaceWith("<h2>new</h2>");
+	*/
+
+
+
+		$(".hello").clone().appendTo('.goodbye');     //clone()和append()的区别 
+													  //clone()原先的dom不变，再复制一份；append()原先的去掉
+													  //都是加子元素
+		// $(".hello").appendTo('.goodbye');
+
+	</script>
+</body>
+</html>

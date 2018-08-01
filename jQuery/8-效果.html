@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		.box{
+			width:100px;
+			height:100px;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">隐藏</button>
+	<button id="show">显示</button>
+	<button id="togg">切换</button>
+	<br>
+	<button id="fadein">fadein</button>
+	<button id="fadeout">fadeout</button>
+	<button id="fadetoggle">fadetoggle</button>
+	<br>
+	<button id="slidedown">slidedown</button>
+	<button id="slideup">slideup</button>
+	<button id="slidetoggle">slidetoggle</button>
+	<br>
+	<button id="animate">animate</button>
+
+	<div class="box"></div>
+
+	<script src="jquery-3.3.1.js"></script>
+	<script src="jquery.easing.1.3.js"></script>
+	<script>
+		//效果都可以加回调函数
+		//参数可以设置时间
+
+		$("#btn").on("click",function () {
+			$(".box").hide();
+		})
+
+		$("#show").on("click",function(){
+			$(".box").show();
+		})
+
+		$("#togg").on("click",function(){
+			$(".box").stop();
+			$(".box").toggle();
+		})
+
+
+
+
+		$("#fadein").on("click",function(){
+			$(".box").fadeIn();
+		})
+		$("#fadeout").on("click",function(){
+			$(".box").fadeOut();
+		})
+		$("#fadetoggle").on("click",function(){
+			$(".box").fadeToggle();
+		})
+
+
+
+		$("#slidedown").on("click",function(){
+			$(".box").slideDown();
+		})
+		$("#slideup").on("click",function(){
+			$(".box").slideUp();
+		})
+		$("#slidetoggle").on("click",function(){ 
+			$(".box").slideToggle();
+		}) 
+
+
+
+		$("#animate").on("click",function(){
+			$(".box").animate({
+				width:400,
+				height:400
+			}, 1000, "easeInElastic", function(){
+				console.log("done");
+			})
+		})
+
+		$(".box").hover(function(){      
+		//hover可以传两个参数，第一个移入，第二个移除，只写一个移入移除都执行同一个函数
+			console.log("in");
+		}, function(){
+			console.log("out");
+		})
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+@charset "utf-8";
+/* 默认设置 */
+*{
+  margin:0;
+  padding:0;
+}
+html{
+  font-size: 62.5%;
+}
+body{
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.4px;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+.nav{
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+}
+.nav .header{
+  height: 48px;
+  padding:24px;  
+}
+.nav .logo{
+  float: left;
+  width: 36px;
+  margin-right: 12px;
+}
+.nav .logo img{
+  width: 36px;
+}
+.nav .primary{
+  display: inline-block;
+}
+.nav .primary li{
+  float: left;
+}
+.nav .primary a{
+  display: block;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 5px 10px 5px;
+}
+.nav .nav-menu{
+  float: right;
+  padding:6px 0;
+}
+.nav .entry img{
+  vertical-align: middle;
+  margin-top: -3px;
+  margin-right: 4px;
+}
+.nav .entry span{
+  color: #00A862;
+  font-size: 1.6rem;
+}
+.nav .entry .sign-in{
+  margin-right: 24px;
+}
+.nav .entry .register{
+  border: 1px solid #00A862;
+  border-radius: 48px;
+  padding: 2px 12px;
+  display: inline-block;
+}
+.nav .account-entry{
+  overflow: hidden;
+}
+.nav .account-entry .text{
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.nav .overlay{
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1005;
+  background: #fff;
+  overflow-y: auto;
+  transition: all 0.1s linear;
+}.nav .overlay.active{
+  opacity: 1;
+  visibility: visible;
+}
+.nav .overlay .header{
+  height: 36px;
+}
+.nav .overlay .menu-close{
+  float: right;
+  display: block;
+  padding:10px 0;
+}
+.nav .overlay-content{
+  display: table;
+  height: 100%;
+}
+
+.nav .overlay-content .body{
+  transform: scale(1.2);
+  width: 100%;
+  display: table-row;
+  height: 100%;
+  transition: all 0.1s linear;
+}
+.active .overlay-content .body{
+  transform:scale(1);
+}
+.nav .ob-content{
+  display: table-cell;
+  vertical-align: middle;
+  box-sizing: border-box;
+  padding-left: 84px;
+  padding-right: 24px;
+  width: 100%;
+  height: 100%;
+}
+.nav .ob-content li{
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.nav .ob-content li a{
+  display: block;
+  padding:8px 0;
+  color: rgba(0, 0, 0, 0.87);
+}
+.nav .ob-content li hr{
+  margin:12px 0;
+  
+}
+.nav .footer .of-content{
+  color: rgba(0, 0, 0, 0.12);
+  font-size: 1.4rem;
+}
+.nav .footer a{
+  color: rgba(0, 0, 0, 0.38);
+}
+.nav .footer .license{
+  font-size: 1rem;
+}
+/* 大于1025 */
+@media (min-width: 1025px){
+  /* 大于1025 nav */
+  .nav{
+    width: 30%;
+    background: #fff;
+    position: fixed;  
+    top: 0;
+    left: 0;
+    bottom: 0;
+    
+  }
+  .nav .container{
+    height: 100%;
+  }
+  .nav .body{
+    display: table;
+    height: calc(100% - 98px);
+  }
+  .nav .body .account-entry{
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 24px 0 84px;
+  }
+ .nav .primary{
+   max-width: calc(100% - 72px);
+ }
+  
+  .nav .overlay{
+    width: 30%;
+  }
+  .nav .ob-bottom{
+    margin:20px 0;
+  }
+  .nav .footer .of-content{
+    margin: 0 24px 24px 84px;
+  }
+  /* 大于1025 contetn */
+  .content{
+    width: 70%;
+    height: 1500px;
+    margin-left: 30%;
+    background: #ddd;
+  }
+}
+/* 641 < 宽度 < 1024 */
+@media (max-width: 1024px) and (min-width: 641px){
+  /* nav */
+  .nav .container .header{
+    padding: 16px;
+  }
+  .nav .container .body{
+    padding:0 16px;
+  }
+  .nav .container .entry{
+    margin-bottom: 20px;
+  }
+ .nav .overlay{
+    width: 100%;
+  }
+  .nav .overlay .overlay-content{
+    width: 100%;
+  }
+  .nav .footer .of-content{
+    margin: 0 24px 24px 84px;
+  }
+  .nav .overlay-content .header{
+    padding:16px;
+  }
+  /* content */
+  .content{
+    width: 100%;
+    height: 1000px;
+    background: #ddd;
+  }
+    .hero{
+      width: 70%;
+      overflow: hidden;
+    }
+    .slider-list{
+      width: 400%;
+    }
+    .slider-list li{
+      width: 25%;
+      float: left;
+    }
+    .slider-list li img{
+      width: 100%;
+    }
+    @media (min-width:641px){
+      .show-mobile{
+        display: none;
+      }
+      .mobile-hidden{
+        display: block;
+      }
+    }
+    @media (max-width:640px){
+      .show-mobile{
+        display: block;
+      }
+      .mobile-hidden{
+        display: none;
+      }
+      
+    }

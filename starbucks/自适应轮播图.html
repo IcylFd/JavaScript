@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    li{
+      list-style: none;
+    }
+    .hero{
+      width: 70%;
+      overflow: hidden;
+    }
+    .slider-list{
+      width: 400%;
+    }
+    .slider-list li{
+      width: 25%;
+      float: left;
+    }
+    .slider-list li img{
+      width: 100%;
+    }
+    @media (min-width:641px){
+      .show-mobile{
+        display: none;
+      }
+      .mobile-hidden{
+        display: block;
+      }
+    }
+    @media (max-width:640px){
+      .show-mobile{
+        display: block;
+      }
+      .mobile-hidden{
+        display: none;
+      }
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="slider-list">
+        <ul class="">
+          <li>
+              <img src="https://www.starbucks.com.cn/assets/images/featured/2018summer3/kv-mooncake.jpg" class="mobile-hidden">
+              <img src="https://www.starbucks.com.cn/assets/images/featured/2018summer3/kv-mooncake-mobile.jpg" class="show-mobile">
+          </li>
+          <li>
+              <img src="https://www.starbucks.com.cn/assets/images/featured/2018summer3/kv-bev.jpg" class="mobile-hidden">
+              <img src="https://www.starbucks.com.cn/assets/images/featured/2018summer3/kv-bev-mobile.jpg" class="show-mobile">
+          </li>
+          <li>
+              <img src="https://www.starbucks.com.cn/assets/images/featured/2018summer3/fp-cold-foam.jpg" class="mobile-hidden">
+              <img src="https://www.starbucks.com.cn/assets/images/featured/2018summer3/fp-cold-mobile.jpg" class="show-mobile">
+          </li>
+          <li>
+              <img src="https://www.starbucks.com.cn/assets/images/featured/2018summer3/kv-mooncake.jpg" class="mobile-hidden">
+              <img src="https://www.starbucks.com.cn/assets/images/featured/2018summer3/kv-mooncake-mobile.jpg" class="show-mobile">
+          </li>
+        </ul>
+    </div>
+  </div>
+  <button id="btn">下一张</button>
+  <script src="../jQuery/jquery-3.3.1.js"></script>
+  <script>
+    var nowIndex = 0;
+    $("#btn").on("click",function(){
+      nowIndex ++;
+      var runLeft = $("li").width() * nowIndex;
+      $(".slider-list").css({
+        transform:'translateX('+(-runLeft)+'px)',
+        transition:'all 1s ease'
+      });
+      setTimeout(function(){
+        if(nowIndex == 3){
+          nowIndex = 0;
+          $(".slider-list").css({
+            transition:'unset',
+            transform:'translateX(0)',
+            
+          });
+        }
+      },1000)
+      
+      
+    })
+  </script>
+</body>
+</html>

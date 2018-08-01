@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		table{ 
+			border:1px solid #000;
+			border-collapse:collapse;
+			text-align:center;
+		}
+		td{
+			padding:2px;
+			border:1px solid #000;
+			width:200px;
+		}
+  		th{ 
+  			
+  			padding:4px;
+  			border-bottom:1px solid #333;
+  			width:200px;	
+  		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th colspan="2">鼠标点击表格就可以编辑</th>
+			</tr>
+			<tr>
+				<td>学号</td>
+				<td>姓名</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td class="name">张三</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td class="name">李四</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td class="name">王五</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td class="name">赵六</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<script src="../jquery-3.3.1.js"></script>
+	<script>
+		$(".name").on("click",function(){
+			if($(this).children("input").length == 0){
+				var inpObj = $("<input type='text' />");
+				var text = $(this).text();
+				$(this).empty();
+				$(this).append(inpObj);
+				inpObj.focus();
+				inpObj.val(text);
+			}
+		});
+ 
+		// $(".name").on("blur","input",function(){    //事件委托
+		// 	var father = $(this).parent("td");
+		// 	father.text($(this).val());
+		// 	$(this).remove();
+		// });
+
+		$(".name").on("focusout",function(){            //td没有blur事件，focusout可以冒泡
+			var child = $(this).children("input");
+			$(this).text(child.val());
+		})
+
+		$(".name").on("keyup",function(e){
+			if(e.which == 13)
+				$(this).trigger("focusout");
+		})
+	</script>
+</body>
+</html>

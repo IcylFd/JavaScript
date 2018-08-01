@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+	*{padding:0;margin:0;list-style: none;}
+	.banner{
+	    margin:100px auto; 
+	    border:5px solid #000; 
+	    width:600px;
+	    height:400px;
+	    position: relative;
+	    overflow: hidden;
+	}
+	.banner .img{
+	    width:600px;
+	    position: absolute;
+	    left:0px;
+	    top:0px;
+
+	}
+	.banner .img li{
+	    float:left;
+	}
+	.banner .num{
+	    position:absolute;
+	    width:100%;
+	    bottom:20px;
+	    left:0px;
+	    text-align: center;
+	    font-size: 0px;
+	}
+	.banner .num li{
+	    width:10px;
+	    height:10px;
+	    background: #888;
+	    border-radius: 50%;
+	    display: inline-block;
+	    margin:0 3px;
+	    cursor: pointer;
+
+	}
+	.banner .num li.on{
+	    background: #f00;
+	}
+	.banner .btn{
+	    width:30px;
+	    height:50px;
+	    background: rgba(0,0,0,0.5);
+	    position:absolute;
+	    top:50%;
+	    margin-top:-25px;
+	    cursor: pointer;
+	    text-align: center;
+	    line-height: 50px;
+	    color:#fff;
+	    font-size: 40px;
+	    display: none;
+	}
+	.banner:hover .btn{
+	    display: block;
+	}
+	.banner .btn_l{
+	    left:0px;
+	}
+	.banner .btn_r{
+	    right:0px;
+	}
+	</style>
+</head>
+<body>
+	<div class="banner">
+    <ul class="img">
+        <li><a href="#"><img src="../焦点轮播图：Airplane/img/a.jpg"></a></li>
+        <li><a href="#"><img src="../焦点轮播图：Airplane/img/b.jpg"></a></li>
+        <li><a href="#"><img src="../焦点轮播图：Airplane/img/c.jpg"></a></li>
+        <li><a href="#"><img src="../焦点轮播图：Airplane/img/d.jpg"></a></li>
+    </ul>
+
+    <ul class="num">
+    </ul>
+    <div class="btn btn_l">&lt;</div>
+    <div class="btn btn_r">&gt;</div>
+	</div>
+
+
+
+	<script src="jquery-3.3.1.js"></script>
+	<script>
+		$(function(){
+		    var i=0;
+		    var clone=$(".banner .img li").first().clone();
+		    $(".banner .img").append(clone);
+		    var size = $(".banner .img li").size();
+		    for(var j=0;j<size-1;j++){
+		        $(".banner .num").append("<li></li>");
+		    }
+		    $(".banner .num li").first().addClass('on');
+		    //鼠标划入圆点
+		    $(".banner .num li").hover(function(){
+		        var index=$(this).index();
+		        i=index;
+		        $(".banner .img").stop().animate({left:-index*1000},500);
+		        $(this).addClass('on').siblings().removeClass('on');
+		    })
+
+		    /*自动轮播*/
+		    var t=setInterval(function(){
+		        i++;
+		        move();
+		    },2000);
+
+		    //对banner定时器的操作
+		    $(".banner").hover(function(){
+		        clearInterval(t);
+		    },function(){
+		        t=setInterval(move,2000);
+		    })
+
+
+		    /*向左按钮*/
+		    $(".banner .btn_l").click(function(){
+		        i++;
+		        move();
+		    })
+		    /*向右按钮*/
+		    $(".banner .btn_r").click(function(){
+		        i--;
+		        move();
+		    })
+
+		    function move(){
+		        if(i==size){
+		            $(".banner .img").css({left:0});
+		            i=1;
+		        }
+		        if(i==-1){
+		            $(".banner .img").css({left:-(size-1)*1000});
+		            i=size-2;
+		        }
+
+		        $(".banner .img").stop().animate({left:-i*1000},500);
+
+		        if(i==size-1){
+		            $(".banner .num li").eq(0).addClass('on').siblings().removeClass('on');
+		        }else{
+		            $(".banner .num li").eq(i).addClass('on').siblings().removeClass('on');
+		        }
+    		}
+		})
+	</script>
+</body>
+</html>

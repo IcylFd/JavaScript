@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="jquery-3.3.1.js"></script>
+	<style>
+		div{
+			width:100%;
+			height:800px;
+		}
+		#box1{
+			background-color: purple;
+		}
+		#box2{
+			background-color: pink;
+		}
+		#box3{
+			background-color: #ccc;
+		}
+
+		#box3:target{
+			background-color: #000;
+		}
+
+		[name = "test"]{       /*属性选择器*/
+			background-color: red;
+		}
+		[class ~= bbb][type = "text"]{      
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<!-- <ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li class="aa">4</li>
+		<li>5</li>
+		<li>6</li>
+	</ul>
+
+	<p>
+		<a href="#box1">box1</a>
+		<a href="#box2">box2</a>
+		<a href="#box3">box3</a>
+	</p>
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+
+	<table border="1">
+	   <tr><td>TD #0</td><td></td></tr>
+	   <tr><td>TD #2</td><td></td></tr>
+	   <tr><td></td><td></td></tr>
+	</table>
+ -->
+
+ 	<input type="text" class="bbb test">
+ 	<input type="text" class="aaa">
+
+	<div id="box"></div>
+
+	<script>
+		//$(".aa + li").css("color","red");   //后面相邻的兄弟元素
+		//$(".aa ~ li").css("color","red");   //后面所有兄弟元素
+		//$("li:eq(2)").css("color","red");  	  //从0开始
+		//$("li:even").css("color","red");
+
+		//$("li:not(.aa)").css("color","red");  //except
+
+		// setInterval(function () {
+		// 	$("div:target").css("background-color","green")     //选中
+		// },2000)
+
+		// $("li:contains('4')").css("color","red");  //选中包含内容的
+
+		// $("td:empty").html("null");
+
+		var oBox = document.getElementById("box");    //添加属性、获取属性 【原生】
+		oBox.setAttribute("data-id","abc");
+		console.log(oBox.getAttribute("data-id"));
+
+		$("#box").attr("data-id","abc");			  //添加属性、获取属性 【jquery】
+		console.log($("#box").attr("data-id"));
+	</script>
+</body>
+</html>

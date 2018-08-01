@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<button id="btn">button</button>
+
+
+	<script src="jquery-3.3.1.js"></script>
+	<script>
+		var person = {
+			name: "xiaoming",
+			age: "20"
+		}
+
+		var student = {
+			name: "xiaohong",
+			school:"linda"
+		}
+
+		$.extend(person,student)   //把两个或多个对象合并到第一个对象里(第一个对象被覆盖)
+		console.log(person);
+
+		var newObj = $.extend({},person,student);
+		console.log(newObj);
+
+		jQuery.fn.extend({
+			fellow:function(){
+				console.log("fellow23");
+			}
+		});
+
+		$("#btn").fellow();
+		
+	</script>
+</body>
+</html>

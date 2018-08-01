@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="jquery-3.3.1.js"></script>
+</head>
+<body>
+	<input type="checkbox" name="test" checked="checked">1
+	<input type="checkbox" name="test">2
+	<input type="checkbox" name="test">3
+	<input type="checkbox" name="test">4
+
+	<script>
+		$("[type = 'checkbox']:eq(1)").attr("checked",true);
+		$("[type = 'checkbox']:eq(2)").prop("checked",true);
+		console.log($("[type = 'checkbox']:eq(1)").attr('checked'));
+		console.log($("[type = 'checkbox']:not(eq(1)").prop('checked'));
+	</script>
+
+</body>
+</html>

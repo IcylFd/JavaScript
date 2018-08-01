@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		table{
+			text-align: center;
+			border-collapse: collapse;
+			width:600px;
+			height:400px;
+		}
+		th{
+
+		}
+		thead tr{
+			border-bottom:2px solid #000;
+		}
+		td{
+			padding-bottom: 5px;
+			border:none;
+		}
+		.selected{
+			background-color: orange !important;
+			color:#fff;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<th>
+				
+				<td>姓名</td>
+				<td>性别</td>
+				<td>暂住地</td>	
+			</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type="radio" name="check"></td>
+				<td>张三</td>
+				<td>男</td>
+				<td>浙江宁波</td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="check"></td>
+				<td>李四</td>
+				<td>女</td>
+				<td>浙江杭州</td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="check"></td>
+				<td>王五</td>
+				<td>男</td>
+				<td>湖南长沙</td>
+			</tr>
+			<tr class="info">
+				<td><input type="radio" name="check"></td>
+				<td>赵六</td>
+				<td>男</td>
+				<td>浙江温州</td>
+			</tr>
+			<tr class="info">
+				<td><input type="radio" name="check"></td>
+				<td>Rain</td>
+				<td>男</td>
+				<td>浙江杭州</td>
+			</tr>
+			<tr class="info">
+				<td><input type="radio" name="check"></td>
+				<td>Amy</td>
+				<td>女</td>
+				<td>浙江宁波</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+	<script src="jquery-3.3.1.js"></script>
+	<script>
+		$("tbody tr:even()").css("background","#ffffb9");
+
+		$("tbody tr").on("click",function(){
+			$(this).addClass("selected").siblings().removeClass("selected").end().find("input:radio").prop("checked",true);
+			// $(this).find("input:radio").prop("checked",true);
+		});
+	</script>
+</body>
+</html>

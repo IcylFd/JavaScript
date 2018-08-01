@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.select-box{
+			height: 300px;
+			width:100px;
+			border:1px solid #333;
+			font-size:16px;
+		}
+
+		.left{
+			position: absolute;
+			top:10px;
+			left:10px;
+		}
+		
+		.right{
+			position: absolute;
+			top:10px;
+			left:150px;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="left">
+		<select id="select-box-l" multiple="multiple" class="select-box">
+			<option value="选项1">选项1</option>
+			<option value="选项2">选项2</option>
+			<option value="选项3">选项3</option>
+			<option value="选项4">选项4</option>
+			<option value="选项5">选项5</option>
+			<option value="选项6">选项6</option>
+			<option value="选项7">选项7</option>
+			<option value="选项8">选项8</option>
+		</select>
+		<br>
+		<button type="button" id="toRight">选中添加到右边>></button>
+		<br>
+		<button type="button" id="AlltoRight">全部添加到右边>></button>
+	</div>
+	<div class="right">
+		<select id="select-box-r" multiple="multiple" class="select-box">
+			<option value="选项9">选项9</option>
+		</select>
+		<br>
+		<button type="button" id="toLeft">选中添加到左边<<</button>
+		<br>
+		<button type="button" id="AlltoLeft">全部添加到左边<<</button>
+	</div>
+	
+
+
+	<script src="jquery-3.3.1.js"></script>
+	<script>
+		$("#toRight").on("click",function(){
+			$("#select-box-l option:selected").appendTo("#select-box-r");
+		});
+
+		$("#AlltoRight").on("click",function(){
+			$("#select-box-l option").appendTo("#select-box-r");
+		});
+
+		$("#toLeft").on("click",function(){
+			$("#select-box-r option:selected").appendTo("#select-box-l");
+		});
+
+		$("#AlltoLeft").on("click",function(){
+			$("#select-box-r option").appendTo("#select-box-l");
+		});
+		
+
+		//添加元素获取不到事件，需要进行事件委托, 委托给父级
+
+		$("#select-box-l").on("dblclick", "option",function(event) {
+			$(this).appendTo("#select-box-r");
+		})
+
+		$("#select-box-r").on("dblclick", "option",function(event) {     
+			$(this).appendTo("#select-box-l");
+		})
+	</script>
+</body>
+</html>

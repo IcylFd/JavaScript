@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+    <input type="button" class="bigger" value="放大">
+    <input type="button" class="smaller" value="缩小">
+    <br>
+    <textarea name="" id="comment" cols="30" rows="10">
+        多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.
+    </textarea>
+    <script src="../jquery-3.3.1.js"></script>
+    <script>
+      var comm = $("#comment"); 
+      $(".bigger").on("click",function(){
+        // if(comm.height()<300){
+        //   comm.height( comm.height()+10);
+        // }
+        comm.height(comm.height()<300?comm.height()+10:comm.height());
+      })
+      $(".smaller").on("click",function(){
+        comm.height(comm.height()>50?comm.height()-10:comm.height());
+      })
+    </script>
+</body>
+</html>

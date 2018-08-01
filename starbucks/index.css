@@ -1,0 +1,171 @@
+/*reset start*/
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+body,html{
+	height:100%;
+}
+.clearfix::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+a{
+	color:#00A862;
+}
+/*reset end*/
+
+
+/*nav-container start*/
+.nav-container{
+	width:30%;
+	height:100%;
+	min-width:400px;
+	position:fixed;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+}
+.header{
+	height:100px;
+	width:100%;
+	line-height:100px;
+}
+.icontrigger{
+	padding:20px;
+	float: left;
+	width:48px;
+	height:48px;
+}
+.nav{
+	width:200px;
+	float: left;
+	font-weight: bold;	
+}
+.nav ul{
+	display: flex;
+	text-align: center;
+}
+.nav li{
+	flex:1;
+}
+.menu-btn{
+	float:right;
+	padding-top:6px;
+	margin-right: 20px;
+}
+.nav-body, .body-content{
+	height:100%;
+	margin:0 auto;
+	vertical-align: middle;
+}
+.nav-body{
+	padding: 0 24px 0 84px;
+}
+.body-content span{
+	font-size:22px;
+	font-weight: bold;
+	display: inline-block;
+	margin-top: 250px;
+}
+.btn{
+	width:180px;
+	height:32px;
+	display: flex;
+	margin-top: 30px;
+}
+.btn .login-btn{
+	flex:1;
+	width:70px;
+	height:32px;
+	position: relative;
+}
+.login-btn img{
+	margin-right: 2px;
+}
+.login-btn span{
+	display: inline-block;
+	font-size:14px;
+	color:#00A862;
+	position: absolute;
+	top:50%;
+	margin-top: -12.5px;
+}
+
+
+.btn .sign{
+	flex:1;
+}
+.sign .sign-btn{
+	color:#00a862;
+	width:60px;
+	height:30px;
+	border:1px solid #00a862;
+	border-radius: 20px;
+	text-align: center;
+	line-height: 30px;
+}
+/*nav-container end*/
+
+/*slider start*/
+.main{
+	width:100%;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	height:100%;
+}
+@media (min-width: 1025px){
+	.main{
+		width:70%;
+		margin-left: 30%;
+	}
+}.hero{
+      width: 100%;
+      overflow: hidden;
+    }
+    .slider-list{
+      width: 400%;
+    }
+    .slider-list li{
+      width: 25%;
+      float: left;
+    }
+    .slider-list li img{
+      width: 100%;
+    }
+    @media (min-width:641px){
+      .show-mobile{
+        display: none;
+      }
+      .mobile-hidden{
+        display: block;
+      }
+    }
+    @media (max-width:640px){
+      .show-mobile{
+        display: block;
+      }
+      .mobile-hidden{
+        display: none;
+      }
+      
+    }
+#right-arrow{
+	width:48px;
+	height:48px;
+	/*background: red;*/
+	background-image: url("right-arrow.png");
+	position: absolute;
+	top:50%;
+	right:10px;
+	margin-top: -24px;
+	z-index: 99;
+}
+/*.active{
+	transition: transform 1s ease;
+}
+.active:hover{
+	transform: translateX(-100%);
+}*/
+/*slider end*/

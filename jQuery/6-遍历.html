@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<!-- <ul>
+    <li>list item 1</li>
+    <li>list item 2
+		<ul>
+      		<li>list item 2-a</li>
+      		<li>list item 2-b</li>
+    	</ul>
+    </li>
+    <li>list item 3</li>
+    <li>list item 4</li>
+    <li>list item 5</li>
+    <li><span>123</span></li>
+    <span>abc</span>
+  </ul> -->
+
+
+
+  <!-- 	<input type="checkbox">1
+  	<input type="checkbox" checked="checked">2
+  	<input type="checkbox">3
+  	<input type="checkbox">4 -->
+
+
+
+  	<ul id="box">
+	  <li><strong>list</strong> item 1 - one strong tag</li>
+	  <li><strong>list</strong> item <strong class="abc">2</strong> - two <span>strong tags</span></li>
+	  <li>list item 3</li>
+	  <li id = "cen">list item 4</li>
+	  <li>list item 5</li>
+	  <li>list item 6</li>
+	</ul>
+
+
+	<div class="div1">div1
+		<div class="div2">div2
+			<div class="div3">
+				div3
+			</div>
+		</div>
+	</div>
+
+	<ul class="level-1">
+  <li class="item-i">I</li>
+  <li class="item-ii">II
+    <ul class="level-2">
+      <li class="item-a">A</li>
+      <li class="item-b">B
+        <ul class="level-3">
+          <li class="item-1">1</li>
+          <li class="item-2">2</li>
+          <li class="item-3">3</li>
+        </ul>
+      </li>
+      <li class="item-c">C</li>
+    </ul>
+  </li>
+  <li class="item-iii">III</li>
+</ul>
+
+	<script src="jquery-3.3.1.js"></script>
+  	<script>
+  		// $("li").eq(2).css("color","red");			 //eq()
+
+  		// $("li").first().css("color","red");           //first()
+  		// $("li").last().css("color","red");			 //last()
+
+  		// $("li").has("ul").css("color","red");         //has()
+
+  		// $("input:checkbox").on("click",function(){
+  		// 	console.log($(this).is(":checked"));         //is()   返回布尔型
+  		// })
+
+  		// $("li").not(":even").css("color","red");
+
+
+
+  		// $("li").filter(function(index){				 //filter
+  		// 	return $('strong', this).length == 1;
+  		// }).css("color","red");
+
+
+
+  		// $(".div1").find(".div2").find(".div3").end().css("color","red");  //end()  返回上一层
+
+
+  		// $("#cen").siblings().css("color","red");         //siblings()   所有兄弟节点
+
+
+  		// console.log($("#box").find(".abc"));
+
+
+
+  		// $('ul.level-2').children().css('background-color', 'red');   //children()   亲子代
+
+
+		//closest()  向上找最近的   （开始于当前元素）
+  		// $("li.item-a").closest("ul").css('background-color', 'red');  
+
+		//parent()  第一个父级   （从父级元素开始）
+		$("li.item-a").parent("ul").css('background-color', 'red');  //parent()  第一个父级
+
+		$("li.item-a").parents("ul").css('background-color', 'red');  //parents()  全部父级
+
+		//nextUntil(), parentsUntil()  不包括until
+
+  	</script>
+</body>
+</html>

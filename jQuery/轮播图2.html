@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		.slider{
+	height:500px;
+	position: relative;
+	text-align: center;
+}
+.slider-panner{
+	height:500px;
+	width:100%;
+	position: absolute;
+	opacity:0;
+	transition:all 0.5s ease;
+}
+.sp-1{
+	background-color: rgb(232, 232, 232);
+}
+.sp-2{
+	background-color: rgb(232, 232, 232);
+}
+.sp-3{
+	background-color: rgb(232, 232, 232);
+}
+.active{
+	opacity: 1;
+	z-index: 2;
+}
+.slider .slider-nav{
+	width:auto;
+	z-index:3;
+	position: absolute;
+	text-align: center;
+	left:675px;
+	bottom:10px;
+
+}
+.slider .slider-btn{
+	width:25px;
+	height:5px;
+	background-color: #000;
+	float:left;
+	margin-left:5px;
+	display: inline-block;
+	opacity: .3;
+	transition: all 0.5s ease;
+}
+.selected{
+	background-color: #fff !important;
+	opacity: .6 !important;
+}
+	</style>
+</head>
+<body>
+	<div class="slider">
+		<div>
+			<div class="slider-panner sp-1 active">
+				<img src="https://img.alicdn.com/simba/img/TB1XvxlubGYBuNjy0FoSuwiBFXa.jpg">
+			</div>
+			<div class="slider-panner sp-2">
+				<img src="https://aecpm.alicdn.com/simba/img/TB1W4nPJFXXXXbSXpXXSutbFXXX.jpg">
+			</div>
+			<div class="slider-panner sp-3">
+				<img src="https://aecpm.alicdn.com/simba/img/TB1_JXrLVXXXXbZXVXXSutbFXXX.jpg">
+			</div>
+		</div>
+		<div class="slider-nav">
+			<ul>
+				<li class="slider-btn active"></li>
+				<li class="slider-btn"></li>
+				<li class="slider-btn"></li>
+			</ul>
+		</div>
+	</div>
+</body>
+
+	<script src="jquery-3.3.1.js"></script>
+	<script>
+		var thisIndex = 0;
+		var isrun = true;
+
+		setInterval(function(){
+			if(isrun){
+				++thisIndex;
+			run();
+			}
+			
+		}, 1000)
+		function run(){
+			if(thisIndex >= 3){
+				thisIndex = 0;
+			}
+			$(".slider-panner").eq(thisIndex).addClass("active").siblings().removeClass("active");
+			$(".slider-nav li").eq(thisIndex).addClass("selected").siblings().removeClass("selected");
+		}
+
+		$(".slider").hover(function(){
+			isrun = false;
+		},function(){
+			isrun = true;
+		})
+
+		$(".slider-nav li").on("mouserover",function(){
+			thisIndex = $(this).index();
+			run();
+		})
+	</script>
+</html>

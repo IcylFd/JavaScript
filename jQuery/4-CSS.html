@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		.test{
+			font-size: 30px;
+			color:blue;
+		}
+
+		.box{
+			height: 300px;
+			width:300px;
+			background: red;
+			padding:10px;
+			margin:10px;
+			border:10px solid #000;
+		}
+		.div1{
+			height:300px;
+			width:300px;
+			background-color: blue;
+			margin:100px;
+			position: relative;
+		}
+		.div2{
+			height:100px;
+			width:100px;
+			background-color: red;
+			position: absolute;
+			top:10px;
+			left:10px;
+		}
+		.div3{
+			height:3000px;
+			background-color: yellow;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- <div id="box">
+		hello world!
+	</div>
+
+	<div class="box" id="div1"></div> -->
+
+	<!-- <div class="div1">
+		<div class="div2"></div>
+	</div> -->
+
+	<div class="div3"></div>
+
+	<script src="jquery-3.3.1.js"></script>
+	<script>
+		// $("#box").css("color","red");
+		// $("#box").addClass('test');
+		// $("#box").removeClass('test');
+		// console.log($("#box").hasClass("test"));
+
+		$("#box").on("click",function(){
+			$(this).toggleClass("test");
+		})
+
+
+		/*----尺寸----*/
+	/*	console.log($("#div1").width());			//content
+		console.log($("#div1").innerWidth());		//content+padding
+		console.log($("#div1").outerWidth());       //content+padding+border
+		console.log($("#div1").outerWidth(true));   //content+padding+border+margin
+	*/
+
+
+		/*----位置----*/
+	/*	var div1 = $(".div1");
+		var div2 = $(".div2");
+		console.log(div2.offset());
+		console.log(div2.position());
+	*/
+
+
+
+		/*----scroll----*/
+
+	/*	$(window).on("scroll",function(){
+			if($(window).scrollTop() == 1000){
+				console.log("到底啦")
+			}
+		})
+	*/
+	</script>
+</body>
+</html>
