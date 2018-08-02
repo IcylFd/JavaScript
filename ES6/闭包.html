@@ -37,27 +37,37 @@
 	}
 
 //普通函数、调用
-	var abc = function(){
+	/*var abc = function(){
 		console.log(2);
 	}
 
-	abc();
+	abc();*/
 
 //立即执行函数
+/*
 	(function(){
 		console.log(2);
 	})();
+*/
 
 
 
+
+	// function a(){
+	// 	b = 10;  //全局变量
+	// };
+	// a();
+	// console.log(b);   //10
 
 
 	function a(){
-		b = 10;  //全局变量
-	};
-	a();
-	console.log(b);   //10
-
+		var str = "abc";
+		function b(){
+			console.log(str);
+		}
+		b();
+	}
+	a();  //abc;
 
 
 

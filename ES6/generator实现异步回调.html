@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../jQuery/jquery-3.3.1.js"></script>
+<script>
+    function run(url) {
+        $.get(url,function (res) {
+            console.log(res);
+            a.next();
+        })
+    }
+
+    function * foo (){
+        yield run("a.json");
+        yield run("b.json");
+        yield run("c.json");
+    }
+
+    var a = foo();
+    a.next();
+</script>
+</body>
+</html>
