@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+</head>
+<body>
+<script>
+    //AJAX不加载页面更新数据
+
+    //AJAX原理！
+
+    //第一步 创建XMLHttpRequest对象
+    var xmlhttp;
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+
+    //第二步 请求发送
+    xmlhttp.open("GET","musicdata.json?t=" + Math.random(),true,true);
+    xmlhttp.send();
+
+
+    //第三步
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+//            document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+            var thisdata = JSON.parse(xmlhttp.responseText);
+            for(var i = 0; i < thisdata.musicData.length; i++){
+                console.log(thisdata.musicData[i].title);
+            }
+            console.log(thisdata);
+        }
+    }
+
+    /*
+    readyState
+            存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。
+            0: 请求未初始化
+            1: 服务器连接已建立
+            2: 请求已接收
+            3: 请求处理中
+            4: 请求已完成，且响应已就绪
+    */
+</script>
+</body>
+</html>
