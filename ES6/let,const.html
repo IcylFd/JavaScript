@@ -32,6 +32,11 @@
 		// console.log(a);   //not defined
 
 
+		let a = "10";        //ES6中 let a不是放在window下
+		console.log(window.a);    //undefined
+		setTimeout(function(){
+		    console.log(this.a);    //undefined
+		},1000);
 
 		// const a = "123";
 		// a = 1;

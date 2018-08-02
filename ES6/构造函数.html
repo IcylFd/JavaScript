@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person (name,age) {         //方法名大写，默认是类
+        this.name = name;                //箭头函数不能构造函数
+        this.age = age;
+    }
+
+    Person.prototype.showName = function () {       //构造函数的方法
+        console.log(this.name);
+    };
+
+    var person1 = new Person("lisi","30");
+    person1.showName();
+</script>
+</body>
+</html>

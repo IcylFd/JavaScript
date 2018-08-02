@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象的扩展</title>
+</head>
+<body>
+<script>
+//    let obj = {
+//        name:"xiaoming",
+//        age:"18",
+//        show:function(){
+//            console.log(this.name);
+//        }
+//    };
+//
+//    let name="xiaohong";
+//    let age="19";
+//    let obj2 = {
+//        name,
+//        age,
+//        show(){
+//            console.log(this.name);
+//        }
+//    };
+//
+//    console.log(obj);
+//    console.log(obj2);
+//
+//    obj.show();
+//    obj2.show();
+
+
+
+
+
+//    let other = "age";
+//    let obj = {
+//        name:"xiaoming",
+//        [other]:"19"         //用保留字、字符串、变量，用[]
+//    };
+//
+//    console.log(obj);
+
+
+
+
+
+//    let obj = {
+//        name:"xiaoming"
+//    };
+//    let obj2 = {
+//        name:"xiaohong"
+//    };
+//
+//    obj = obj2;      //直接赋值，赋值的是地址
+//    console.log(Object.is(obj,obj2));
+
+
+
+
+//    console.log(-0 === +0)         //==判断值相等， ===判断数据类型
+//    console.log(NaN == NaN);    //false
+
+//    console.log(Object.is(+0,-0));  //false
+//    console.log(Object.is(NaN,NaN));  //true
+
+
+
+
+
+//    let obj = {
+//        name:"xiaoming",
+//        age:"18"
+//    };
+//    let obj2 = {
+//        school:"linda",
+//        teacher:{
+//            name:"lisi"
+//        }
+//    };
+//    Object.assign(obj,obj2);       //半深克隆
+//    obj2.school="heida";
+//    obj2.teacher.name="zhangsan";
+//    console.log(obj);
+
+
+
+
+
+//    let obj = {
+//            name:"xiaoming",
+//            age:"18"
+//    };
+//    console.log("name" in obj);
+
+    let arr = [1,2,3,4,5];
+    console.log(8 in arr);
+</script>
+</body>
+</html>
