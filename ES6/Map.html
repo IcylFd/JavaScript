@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map</title>
+</head>
+<body>
+<script>
+//    let map = new Map();    //用set方式添加, key值不允许重复
+//    map.set("name","xiaoming");
+//
+//
+//
+//    let obj = {
+//        name:"lisi"
+//    }
+//    let obj2 = {
+//        age:"20"
+//    }
+//    map.set(obj2,obj);
+//
+//    map.set(obj2,"hello");
+//    map.set("fellow","hello");    //值重复可以添加
+//
+//    console.log(map);
+
+
+
+    let mo = new WeakMap();     //WeakMap 只接受对象类型的key值
+    let obj = {
+        name:"xiaoming"
+    }
+    mo.set(obj,"fellow");
+
+//    mo.set(null,"11");       //null也是对象类型，但不能添加
+    console.log(mo);
+</script>
+</body>
+</html>

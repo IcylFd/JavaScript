@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Symbol</title>
+</head>
+<body>
+<script>
+    let name = Symbol();    //不覆盖原对象内的数据
+
+    let obj = {
+        name:"xiaoming",
+        age:"12"
+    };
+
+    obj[name] = "xiaohong";
+
+//    console.log(obj[name]);
+
+    for(items in obj){
+        console.log(items);
+    }
+</script>
+</body>
+</html>
