@@ -6,60 +6,63 @@
 </head>
 <body>
 <script>
-//    function Person(name,age) {
-//        this.name = name;
-//        this.age = age;
-//    }
-//
-//    Person.prototype.showname = function () {
-//        console.log(this.name);
-//    };
-//
-//    let person1 = new Person("xiaoming","20");
-//    person1.showname();
-
-
-
-////    基于原型的继承
-//    function Student(name,age) {
-//        Person.call(this,name,age);
-//    }
-//
-//    Student.prototype = Person.prototype;
-//    let person2 = new Student("lisi","30");
-//
-//    person2.showname();
-
-
-
-
-    class Person{                  //class构造函数
-        constructor(name, age){
-            this.name = name;
-            this.age = age;
-        }
-        showname(){
-            console.log(this.name);
-        }
+    function Person(name,age) {
+        this.name = name;
+        this.age = age;
     }
 
-    let person1 = new Person("lisi", "18");
+    Person.prototype.showname = function () {
+        console.log(this.name);
+        console.log(this);
+    };
+
+    let person1 = new Person("xiaoming","20");
     person1.showname();
 
 
 
+//    基于原型的继承
+    function Student(name,age) {            //属性继承
+        Person.call(this,name,age);
 
-    class Student extends Person{      //ES6继承
-        constructor(name,age){
-            super(name,age);
-        }
-        work(){
-            console.log("working");
-        }
     }
-    let person2 = new Student("zhangsan","20");
-    person2.showname();
-    person2.work();
+
+    Student.prototype = new Person();       //方法继承
+    Student.prototype.constructor = Student;    //使Student的构造函数指向Student
+    let student1 = new Student("lisi","30");
+
+    student1.showname();
+
+
+
+
+//    class Person{                  //class构造函数
+//        constructor(name, age){
+//            this.name = name;
+//            this.age = age;
+//        }
+//        showname(){
+//            console.log(this.name);
+//        }
+//    }
+//
+//    let person1 = new Person("lisi", "18");
+//    person1.showname();
+//
+//
+//
+//
+//    class Student extends Person{      //ES6继承
+//        constructor(name,age){
+//            super(name,age);
+//        }
+//        work(){
+//            console.log("working");
+//        }
+//    }
+//    let person2 = new Student("zhangsan","20");
+//    person2.showname();
+//    person2.work();
 </script>
 </body>
 </html>

@@ -1,0 +1,78 @@
+/*多行注释*/
+//单行注释，不会出现在css中
+/*!强制注释*/
+$color:#ff0;
+.div{
+  color:$color;
+  .box1{
+    color:$color;
+  }
+  &:hover{
+    font-size: 10px;
+  }
+  &-header{
+    font-weight:bold;
+  }
+}
+.div2{
+  background: {
+    color:#ff0;
+    repeat:no-repeat;
+    image:url(xx.jpg);
+  }
+  border:{
+    left:{
+      color:pink;
+      width:1px;
+    }
+    right:{
+      color:blue;
+      width:2px;
+    }
+  }
+}
+.div3{
+  font-size:16px;
+}
+.div4{
+  background: #fff;
+}
+
+@mixin mx($w,$h:100px){
+  width:$w;
+  height:$h;
+}
+
+.div5{
+  @include mx(1000px);
+}
+.div6{
+  @include mx(1000px,2000px);
+}
+
+@import "base";
+
+.div7{
+  @extend .div4;
+  color:#2a557f;
+}
+
+.div8{
+  width:200px - 100px;
+}
+
+.div9{
+  height:200 - 100px;
+}
+
+.div10{
+  height:200 + 100px;
+}
+
+.div11{
+  height:100*10px;
+}
+
+.div12{
+  width:(100px) / 2;
+}

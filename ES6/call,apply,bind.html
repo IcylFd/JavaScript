@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>call</title>
+</head>
+<body>
+<script>
+//    var aa = "123";
+//    function foo(name, age,school){
+//        console.log(this.aa);
+//        console.log(name);
+//        console.log(age);
+//        console.log(school);
+//    }
+//
+////    foo("lisi","20");
+//
+//
+//    var obj = {
+//        aa:"abcd"
+//    };
+//
+////    foo.call(obj,"zhangsan","30","linda");      //this指向改变,指向obj
+//
+//
+////    foo.apply(obj,["xiaoming","30","linda"]);
+//
+//
+//    //call 和 apply
+//    //call和apply第一个参数都是这个对象，都是直接执行
+//    //call的参数个数不确定，apply只有两个参数
+//
+//
+//    var foo2 = foo.bind(obj,"lisi","19");    //bind调用才执行
+//    foo2("ligong");
+
+
+
+
+
+
+    // 用call,apply实现bind
+    let obj = {
+        aa:"123"
+    };
+    function foo(name,age,school) {
+       console.log(name);
+       console.log(age);
+       console.log(school);
+    }
+
+    Function.prototype.bind2 = function () {
+        let aObj = Array.from(arguments)[0];
+        let args = Array.from(arguments).slice(1);
+        let that = this;
+        return function () {
+            let bindArgs = Array.from(arguments);
+            args = args.concat(bindArgs);
+            return that.call(aObj,...args);
+//            return that.apply(aObj,args);
+        }
+    };
+
+
+    let foo2 = foo.bind2(obj,"lisi","19","linda");
+    foo2();
+
+
+
+</script>
+</body>
+</html>
