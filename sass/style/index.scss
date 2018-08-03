@@ -76,3 +76,80 @@ $color:#ff0;
 .div12{
   width:(100px) / 2;
 }
+
+$num:10;
+$imag:"aa";
+.div13{
+  width:$num + 1;
+  background-image:url($imag+".jpg");
+}
+
+
+.div14{
+  color:lighten(rgb(0,0,225),20%);
+}
+.div15{
+  color:darken(rgb(225,255,0),20%);
+}
+.div16{
+  color:opacify($color,0.3);
+}
+.div17{
+  color:transparentize($color,0.3);
+}
+
+$m:(light:#000,dark:#fff);
+
+.div18{
+  color:map_get($m,light);
+}
+
+$user:"lisi";
+
+/*作者：#{$user}*/
+
+$selector:div19;
+#{$selector}{
+  color:#6b3fcc;
+}
+
+@function foo($key){
+  @if($key=="1"){
+    @return red;
+  }@else{
+    //@warn "没有参数";
+    //@error "没有参数";
+    @return blue;
+   }
+}
+
+.div21{
+  color:foo("2");
+}
+
+@for $var from 1 to 5{         //不包含5
+  .div-content-#{$var}{
+    width:$var+"px";
+  }
+}
+
+@for $var from 1 through 5{    //包含5
+  .div-content-#{$var}{
+    width:$var+"px";
+  }
+}
+
+$lista:a b c d;
+@each $var in $lista{
+  .div-#{$var}{
+    background: #000;
+  }
+}
+
+$i:0;
+@while ($i<10) {
+  .div-footer-#{$i}{
+    background: #6b3fcc;
+  }
+  $i:$i+1;
+}

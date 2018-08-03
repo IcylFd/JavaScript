@@ -1,61 +1,45 @@
-@charset "UTF-8";
-/*多行注释*/
-/*!强制注释*/
-.div {
-  color: #ff0; }
-.div .box1 {
-  color: #ff0; }
-.div:hover {
-  font-size: 10px; }
-.div-header {
-  font-weight: bold; }
+/*
+Error: Invalid CSS after "$while ": expected ":", was "$i"
+        on line 149 of style/index.scss
 
-.div2 {
-  background-color: #ff0;
-  background-repeat: no-repeat;
-  background-image: url(xx.jpg);
-  border-left-color: pink;
-  border-left-width: 1px;
-  border-right-color: blue;
-  border-right-width: 2px; }
+144:   .div-#{$var}{
+145:     background: #000;
+146:   }
+147: }
+148: 
+149: $while $i
 
-.div3 {
-  font-size: 16px; }
-
-.div4, .div7 {
-  background: #fff; }
-
-.div5 {
-  width: 1000px;
-  height: 100px; }
-
-.div6 {
-  width: 1000px;
-  height: 2000px; }
-
-* {
-  margin: 0;
-  padding: 0; }
-
-li {
-  list-style: none; }
-
-.div7 {
-  color: #2a557f; }
-
-.div8 {
-  width: 100px; }
-
-.div9 {
-  height: 100px; }
-
-.div10 {
-  height: 300px; }
-
-.div11 {
-  height: 1000px; }
-
-.div12 {
-  width: 50px; }
-
-/*# sourceMappingURL=index.css.map */
+Backtrace:
+style/index.scss:149
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.7/lib/sass/scss/parser.rb:1278:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.7/lib/sass/scss/parser.rb:1208:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.7/lib/sass/scss/parser.rb:1203:in `tok!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.7/lib/sass/scss/parser.rb:640:in `variable'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.7/lib/sass/scss/parser.rb:696:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.7/lib/sass/scss/parser.rb:689:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.7/lib/sass/scss/parser.rb:137:in `stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.7/lib/sass/scss/parser.rb:41:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.7/lib/sass/engine.rb:414:in `_to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.7/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.7/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.7/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.7/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.7/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.7/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.7/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.7/lib/sass/plugin/compiler.rb:320:in `block in watch'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"$while \": expected \":\", was \"$i\"\A         on line 149 of style/index.scss\A \A 144:   .div-#{$var}{\A 145:     background: #000;\A 146:   }\A 147: }\A 148: \A 149: $while $i"; }
