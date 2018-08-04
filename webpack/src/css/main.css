@@ -1,0 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.box2{
+    height:400px;
+    width:600px;
+    background-image: url(../img/a.jpg);
+}
