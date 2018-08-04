@@ -149,7 +149,7 @@ $lista:a b c d;
 $i:0;
 @while ($i<10) {
   .div-footer-#{$i}{
-    background: #6b3fcc;
+    background:#6b3fcc;
   }
   $i:$i+1;
 }

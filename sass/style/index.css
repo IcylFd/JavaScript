@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/*多行注释*/
+/*!强制注释*/
+.div {
+  color: #ff0; }
+  .div .box1 {
+    color: #ff0; }
+  .div:hover {
+    font-size: 10px; }
+  .div-header {
+    font-weight: bold; }
+
+.div2 {
+  background-color: #ff0;
+  background-repeat: no-repeat;
+  background-image: url(xx.jpg);
+  border-left-color: pink;
+  border-left-width: 1px;
+  border-right-color: blue;
+  border-right-width: 2px; }
+
+.div3 {
+  font-size: 16px; }
+
+.div4, .div7 {
+  background: #fff; }
+
+.div5 {
+  width: 1000px;
+  height: 100px; }
+
+.div6 {
+  width: 1000px;
+  height: 2000px; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+.div7 {
+  color: #2a557f; }
+
+.div8 {
+  width: 100px; }
+
+.div9 {
+  height: 100px; }
+
+.div10 {
+  height: 300px; }
+
+.div11 {
+  height: 1000px; }
+
+.div12 {
+  width: 50px; }
+
+.div13 {
+  width: 11;
+  background-image: url(""); }
+
+/*# sourceMappingURL=index.css.map */
