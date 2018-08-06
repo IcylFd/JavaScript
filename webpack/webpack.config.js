@@ -47,16 +47,16 @@ module.exports = {
                     use:["css-loader","sass-loader"]
                 })
             },
-            {
-                test: /\.(jsx|js)$/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ["es2015","env","stage-0"]
-                    }
-                },
-                exclude:/node_modules/,
-            }
+            // {
+            //     test: /\.(jsx|js)$/,
+            //     use: {
+            //         loader: 'babel-loader',
+            //         options: {
+            //             presets: ["es2015","env","stage-0"]
+            //         }
+            //     },
+            //     exclude:/node_modules/,
+            // }
 
 
         ]
