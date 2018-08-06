@@ -1,10 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const opn = require('opn');
+const glob = require('glob');
+const PurifyCSSPlugin = require('purifycss-webpack');
+const webpack = require('webpack');
+const entry = require('./webpack_config/entry_webpack.js');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: entry,
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
@@ -15,7 +19,10 @@ module.exports = {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
                     fallback:"style-loader",
-                    use:"css-loader",
+                    use:[{
+                        loader:"css-loader",
+                        options:{importLoaders: 1}
+                    },"postcss-loader"],
                     publicPath:"../"
                 })
             },
@@ -33,6 +40,23 @@ module.exports = {
                 test: /\.(html|htm)$/i,
                 loader: 'html-withimg-loader'
             },
+            {
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract({
+                    fallback:"style-loader",
+                    use:["css-loader","sass-loader"]
+                })
+            },
+            {
+                test: /\.(jsx|js)$/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ["es2015","env","stage-0"]
+                    }
+                },
+                exclude:/node_modules/,
+            }
 
 
         ]
@@ -46,10 +70,26 @@ module.exports = {
             },
             hash:true,
             template:"./src/index.html"
-        })
+        }),
+        new PurifyCSSPlugin({
+            paths: glob.sync(path.join(__dirname, './src/*.html'))
+        }),
+        new webpack.BannerPlugin('注释'),
+        new webpack.ProvidePlugin({
+            $:'jquery'
+        }),
+        new CopyWebpackPlugin([{
+            from: __dirname + '/src/public',
+            to: './public'
+        }])
     ],
     devServer:{
 
     },
+    watchOptions:{
+        poll:1000,
+        aggregateTimeout:500,
+        ignored:/node_modules/
+    }
 
 };
