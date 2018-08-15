@@ -37,7 +37,7 @@
 <form action="">
     <input type="text" placeholder="请输入邮箱" id="email" onblur="emailTest()">
     <input type="text" placeholder="请输入网址" id="url" onblur="urlTest()">
-    <input type="text" placeholder="请输入数字" id="num" onkeydown="numTest(event)">
+    <input type="text" placeholder="请输入数字" id="num">
     <input type="button" value="提交">
 </form>
 <div id="emailtest">请输入正确邮箱地址</div>
@@ -60,7 +60,7 @@
 
     function urlTest() {
         let reg2 = /\./g;
-        if(!reg2.test(url.num)){
+        if(!reg2.test(url.value)){
             urltest.style.display = "block";
         }else{
             urltest.style.display = "none";
@@ -68,7 +68,7 @@
         console.log(reg2.exec(url.value))
     }
 
-    function numTest(e) {
+    num.onkeydown = function numTest(e) {
         let reg3 = /\d|Backspace/;
         if(reg3.test(e.key)){
             numtest.style.display = "none";
@@ -77,6 +77,7 @@
         else{
             numtest.style.display = "block";
             return false;
+
         }
     }
 
