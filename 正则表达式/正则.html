@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    let reg = /c/;
+//    let reg1 = new RegExp('c');
+//    let str = 'cba';
+//
+//    console.log(str.includes('c'));
+//    console.log(reg1.test(str));
+//    console.log(reg1.exec(str));
+
+
+    let str = 'sbssacsessd';
+
+//    let reg=/s+/;
+//    let reg = /s?/;
+//    let reg = /s{1,}?/;   //非贪心模式
+//    let reg = /^s/;      //开头
+//    let reg = /^sss/;
+
+//    let reg = /d$/;      //结尾
+
+//    let reg = /^sd$/;      //只匹配sd
+
+
+//    let reg = /./;        //匹配除\n以外的其他字符，只匹配第一个
+
+//    let reg = /.+/;      //匹配一个或多个
+
+//    let reg = /^.+/;
+//    let str1 = '\nagbfd';
+//    console.log(reg.exec(str1));
+
+//    let reg = /b|c/;
+
+//    let reg = /^b|c.+/;    //以|分割
+
+
+//    let reg = /^[abc]/;      //集合
+//    console.log(reg.exec(str));
+
+//    let reg = /^[a-z][a-zA-Z0-9]+/;
+//    let str1 = 'aBCde123fg';
+
+//    let reg = /^[a-z]b.+/
+//    let str2 = 'abZ34';
+
+//    let reg = /^[^a-z]/;
+//    let str3 = 'avfd34';
+
+//    let reg = /\ba/;      //前边界
+//    let reg = /a\b/;      //后边界
+                            //空格、换行 也是边界
+//    let reg = /\Bc/;      //匹配非边界的
+//    let str3 = 'dcdfs24a';
+//    console.log(reg.exec(str3));
+
+
+//    let reg = /\d/;       //匹配数字
+//    let reg = /\D/;       //非匹配数字
+//    let str4 = 'ac2bae';
+//    console.log(reg.exec(str4));
+
+//    let reg = /\s/;       //匹配空格
+//    let reg = /\S/;       //匹配非空格
+
+//    let reg = /\w/;        //相当于[a-zA-Z0-9_]  (一个字符)
+//    let reg = /\w+/;       //相当于[a-zA-Z0-9_]  (多个字符)
+
+//    let reg = /\W/;
+//    let reg = /(\w)(\w)\1/;    //子正则表达式可以保存起来, \1使用
+//    let str5 = 'ac2b  ae';
+//    console.log(reg.exec(str5));
+
+
+//    let reg = /^(b|c).+/;
+//    let reg = /^(?:b|c).+/;   //不保存,反向引用不能使用
+//    let str6= 'bbs.blueidea.com';
+//    console.log(reg.exec(str6));
+
+//    let reg = /cainiao(?=8)/;    //判断是否紧跟8
+//    let reg = /cainiao(?!8)/;    //判断是否不紧跟8
+//    let str7 = "cainiao";
+//    console.log(reg.exec(str7));
+
+//    let reg = /\*/;    //匹配特殊字符
+//    let str8 = "abc*d";
+//    console.log(reg.exec(str8));
+
+//    let reg = /b/i;       //不区分大小写
+//    let str9 = "ABCD";
+//    console.log(reg.exec(str9));
+
+    let reg = /^C/m;       //匹配行首行位 换行也当做一行
+    let str10 = "AB\nCD";
+    console.log(reg.exec(str10));
+
+
+</script>
+</body>
+</html>
