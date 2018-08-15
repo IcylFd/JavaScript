@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2bb5db5-0617-4700-bc03-081c668d2c1c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/正则表达式/正则.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/正则表达式/例子.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/正则表达式/练习.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/正则表达式/表单验证.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/正则表达式/正则.html" afterPath="$PROJECT_DIR$/正则表达式/正则.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,52 +20,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webpack/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package-lock.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webpack/package-lock.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126018">
-              <caret line="7001" column="19" lean-forward="false" selection-start-line="7001" selection-start-column="19" selection-end-line="7001" selection-end-column="19" />
-              <folding>
-                <marker date="1533528426000" expanded="true" signature="59934:59945" ph="{&quot;babel-plugin-syntax-jsx&quot;: &quot;^6.3.13&quot;...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webpack/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="entry_webpack.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webpack/webpack_config/entry_webpack.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="generator实现异步回调.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ES6/generator实现异步回调.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
+            <state relative-caret-position="0">
               <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
               <folding />
             </state>
@@ -99,11 +60,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="正则.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="正则.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/正则表达式/正则.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="98" column="43" lean-forward="false" selection-start-line="98" selection-start-column="43" selection-end-line="98" selection-end-column="43" />
+            <state relative-caret-position="1259">
+              <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="练习.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/正则表达式/练习.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="表单验证.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/正则表达式/表单验证.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="83" column="7" lean-forward="true" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/echart/test.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="例子.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/正则表达式/例子.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -142,9 +143,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ES6/解构.html" />
-        <option value="$PROJECT_DIR$/ES6/扩展运算符和rest运算符.html" />
-        <option value="$PROJECT_DIR$/ES6/字符串扩展.html" />
         <option value="$PROJECT_DIR$/ES6/indexof实现endsWith,startsWith.html" />
         <option value="$PROJECT_DIR$/ES6/数值扩展.html" />
         <option value="$PROJECT_DIR$/ES6/函数的扩展.html" />
@@ -192,7 +190,10 @@
         <option value="$PROJECT_DIR$/webpack/src/index.js" />
         <option value="$PROJECT_DIR$/webpack/package.json" />
         <option value="$PROJECT_DIR$/webpack/webpack.config.js" />
+        <option value="$PROJECT_DIR$/正则表达式/例子.html" />
         <option value="$PROJECT_DIR$/正则表达式/正则.html" />
+        <option value="$PROJECT_DIR$/正则表达式/练习.html" />
+        <option value="$PROJECT_DIR$/正则表达式/表单验证.html" />
       </list>
     </option>
   </component>
@@ -241,6 +242,11 @@
             <path>
               <item name="JavaScript" type="b2602c69:ProjectViewProjectNode" />
               <item name="JavaScript" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaScript" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaScript" type="462c0819:PsiDirectoryNode" />
+              <item name="echart" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JavaScript" type="b2602c69:ProjectViewProjectNode" />
@@ -376,7 +382,7 @@
       <workItem from="1533370119735" duration="12404000" />
       <workItem from="1533528774196" duration="5729000" />
       <workItem from="1533787885347" duration="394000" />
-      <workItem from="1534295526520" duration="5202000" />
+      <workItem from="1534295526520" duration="13675000" />
     </task>
     <task id="LOCAL-00001" summary="jiegou">
       <created>1533095020903</created>
@@ -546,11 +552,18 @@
       <option name="project" value="LOCAL" />
       <updated>1533528994220</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="2018.8.15">
+      <created>1534300779704</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1534300779704</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187691000" />
+    <option name="totallyTimeSpent" value="196164000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -633,7 +646,8 @@
     <MESSAGE value="2018.8.4" />
     <MESSAGE value="2018.8.4 webpack" />
     <MESSAGE value="2018.8.6 webpack" />
-    <option name="LAST_COMMIT_MESSAGE" value="2018.8.6 webpack" />
+    <MESSAGE value="2018.8.15" />
+    <option name="LAST_COMMIT_MESSAGE" value="2018.8.15" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -642,41 +656,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ES6/c.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ES6/b.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="11" lean-forward="false" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ES6/promise.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="60" column="31" lean-forward="false" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ES6/generator.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ES6/ajax.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ES6/Symbol.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -953,7 +932,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ES6/generator实现异步回调.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
+        <state relative-caret-position="0">
           <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
           <folding />
         </state>
@@ -991,10 +970,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/正则表达式/例子.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/echart/echarts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-414">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/echart/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/正则表达式/正则.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="98" column="43" lean-forward="false" selection-start-line="98" selection-start-column="43" selection-end-line="98" selection-end-column="43" />
+        <state relative-caret-position="1259">
+          <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/正则表达式/练习.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/正则表达式/表单验证.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="83" column="7" lean-forward="true" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
           <folding />
         </state>
       </provider>

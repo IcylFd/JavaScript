@@ -80,7 +80,7 @@
 
 //    let reg = /^(b|c).+/;
 //    let reg = /^(?:b|c).+/;   //不保存,反向引用不能使用
-//    let str6= 'bbs.blueidea.com';
+    let str6= 'bbs.blueidea.com';
 //    console.log(reg.exec(str6));
 
 //    let reg = /cainiao(?=8)/;    //判断是否紧跟8
@@ -96,10 +96,29 @@
 //    let str9 = "ABCD";
 //    console.log(reg.exec(str9));
 
-    let reg = /^C/m;       //匹配行首行位 换行也当做一行
-    let str10 = "AB\nCD";
-    console.log(reg.exec(str10));
+//    let reg = /^C/m;       //匹配行首行位 换行也当做一行
+//    let str10 = "AB\nCD";
+//    console.log(reg.exec(str10));
 
+//    let reg = /C/g;    //全部匹配
+//    let str11 = 'ABCDC';
+//    console.log(reg.exec(str11));
+//    console.log(str11.replace(reg,9));
+//    console.log(str11.match(reg));
+
+//    let reg = /(\w+).(\w+).(\w+)/;
+//    console.log(reg.exec(str6));
+//    let newStr = str6.replace(reg,'$1.$2.$3');      //$1匹配第一个子正则表达式值
+//    console.log(newStr);
+
+
+    let reg = /(?<fir>\w+).(?<sec>\w+).(?<thi>\w+)/;
+    console.log(reg.exec(str6).groups.fir);
+
+
+//    let reg = /\W/;
+//    let arr = str6.split(reg);
+//    console.log(arr);
 
 </script>
 </body>

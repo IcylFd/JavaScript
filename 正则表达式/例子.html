@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //30CAC0040 取出40
+    //3SFASDF92 取出92
+    let str1 = '30CAC0040';
+    let str2 = '3SFASDF92';
+    let reg1 = /\d{2}$/;
+    console.log(reg1.exec(str1));
+    console.log(reg1.exec(str2));
+
+
+
+
+    //蓝     色    理  想
+    //变成：蓝 色 理 想
+
+    let str3 = "蓝     色        理  想";
+    let reg2 = /\s+/g;
+    console.log(str3.replace(reg2,' '));
+</script>
+</body>
+</html>

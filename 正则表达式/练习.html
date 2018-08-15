@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str1 = '2018-15-08';
+    let reg1 = /(\d+)-(\d+)-(\d+)/;
+    let newStr1 = str1.replace(reg1,'$1年$3月$2日');
+    console.log(reg1.exec(str1));
+    console.log(newStr1);
+</script>
+</body>
+</html>

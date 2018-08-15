@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #numtest,#urltest,#emailtest{
+            height:20px;
+            border:1px solid #fccd5c;
+            border-radius: 10px;
+            position: absolute;
+            font-size: 12px;
+            text-align: center;
+            line-height: 20px;
+            color: #fcba27;
+            display: none;
+        }
+        #numtest{
+            top:50px;
+            left:300px;
+            width:80px;
+        }
+        #urltest{
+            top:50px;
+            left:150px;
+            width:120px;
+        }
+        #emailtest{
+            top:50px;
+            left:5px;
+            width:120px;
+        }
+
+    </style>
+</head>
+<body>
+<form action="">
+    <input type="text" placeholder="请输入邮箱" id="email" onblur="emailTest()">
+    <input type="text" placeholder="请输入网址" id="url" onblur="urlTest()">
+    <input type="text" placeholder="请输入数字" id="num" onkeydown="numTest(event)">
+    <input type="button" value="提交">
+</form>
+<div id="emailtest">请输入正确邮箱地址</div>
+<div id="urltest">请输入正确网址</div>
+<div id="numtest">请输入数字</div>
+<script>
+    let email = document.getElementById("email");
+    let url = document.getElementById("url");
+    let num = document.getElementById("num");
+    let numtest = document.getElementById("numtest");
+
+    function emailTest(){
+        let reg1 = /\@+/;
+        if(!reg1.test(email.value)){
+            emailtest.style.display = "block";
+        } else{
+            emailtest.style.display = "none";
+        }
+    }
+
+    function urlTest() {
+        let reg2 = /\./g;
+        if(!reg2.test(url.num)){
+            urltest.style.display = "block";
+        }else{
+            urltest.style.display = "none";
+        }
+        console.log(reg2.exec(url.value))
+    }
+
+    function numTest(e) {
+        let reg3 = /\d|Backspace/;
+        if(reg3.test(e.key)){
+            numtest.style.display = "none";
+            return true;
+        }
+        else{
+            numtest.style.display = "block";
+            return false;
+        }
+    }
+
+</script>
+</body>
+</html>
