@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //避免使用全局变量 用let
+    //const 不允许改变栈里的值，可以改变属性的值
+    //既能使用let和const，就使用const
+    //定义字符串常量，尽量使用单引号，有变量使用字符串模板
+    //尽量使用解构赋值
+    //函数参数 使用对象解构
+
+    //定义对象 单行 最后一个成员不加逗号，多行 最后一个成员加逗号
+    //属性名是变量，用中括号
+
+
+
+    //使用对象、方法简洁表示法
+//    let a = '123';
+//    let obj = {
+//        a,
+//        b(){
+//
+//        }
+//    };
+//    console.log(obj);
+
+
+
+//尽量使用扩展运算符拷贝数组
+//    let a = [1,2,3,4,5];
+//    let b = [...a];
+//    console.log(b);
+//
+//    //数组去重
+//    let arr = [1,2,3,1,5,3];
+//    console.log(Array.from(new Set(arr)));
+
+
+
+    //立即执行函数尽量使用箭头函数
+//    (()=>{
+//        alert("1");
+//    })()
+
+
+//    window.onload = function () {      //所有外部文件都加载完再执行
+//
+//    }
+//
+//    document.ready = function(){      //jquery   dom解构加载完再执行
+//
+//    }
+
+
+
+//    let a = [1,2,3,4,5,6,7]
+//
+//    let b = a.map(function (val,index,arr) {       //! map和for的区别
+//        if(val > 5){
+//            return val
+//        }
+//    })
+//
+//    console.log(b);
+
+    //方法体简单,不复用，建议使用箭头函数 单行自动return
+
+
+    function foo(a,...arg) {
+//        console.log(arguments);     //尽量不要使用arguments
+        console.log(a,arg);
+    }
+    foo(1,2,3);
+</script>
+
+
+
+</body>
+</html>
